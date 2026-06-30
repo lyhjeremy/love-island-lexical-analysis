@@ -1,0 +1,9 @@
+unit,coverage_target,words_needed
+Word families (lemmatised),80%,250
+Word families (lemmatised),90%,592
+Word families (lemmatised),95%,1249
+Word families (lemmatised),98%,2554
+Word types (raw forms),80%,326
+Word types (raw forms),90%,860
+Word types (raw forms),95%,1902
+Word types (raw forms),98%,3911

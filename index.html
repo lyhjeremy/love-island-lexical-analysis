@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>How Simple Is the Language on Love Island?</title>
+<meta name="description" content="A corpus-based study of Love Island USA Season 4: the 100 most common words make up 61% of all speech, the show reads at a 3rd-5th grade level, and ~1,250 word families cover 95% of everything said." />
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --paper: #FBF8F1;
+    --rule: #E5DCC7;
+    --soft: #6B7280;
+    --accent: #D4A537;
+    --coral: #E0567A;
+    --teal: #15868C;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  .hero {
+    width: 100%;
+    background: #14142b;
+    overflow: hidden;
+  }
+  .hero svg { width: 100%; height: 300px; display: block; }
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
+  .kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--coral);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 18px;
+  }
+  .lede { font-size: 21px; color: #33334d; text-align: center; margin: 0 auto 8px; max-width: 640px; }
+  .byline { color: var(--soft); font-style: italic; margin: 22px 0 36px; text-align: center; }
+  h2 {
+    font-size: 28px;
+    margin: 56px 0 16px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+  }
+  h3 { font-size: 21px; margin: 34px 0 10px; }
+  p { margin: 0 0 18px; }
+  a { color: var(--teal); }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    margin: 28px 0;
+    padding: 4px 24px;
+    font-style: italic;
+    background: rgba(212, 165, 55, 0.08);
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 36px 0;
+  }
+  .stat {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 22px 16px;
+    text-align: center;
+  }
+  .stat .num {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--coral);
+    line-height: 1;
+  }
+  .stat .lab { font-size: 14px; color: var(--soft); margin-top: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .figure { margin: 36px 0; text-align: center; }
+  .figure img { max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 6px; background:#fff; }
+  .figure figcaption { font-size: 14px; color: var(--soft); font-style: italic; margin-top: 10px; }
+  .findings { background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 24px 30px; margin: 32px 0; }
+  .findings h3 { margin-top: 0; }
+  .findings ul { margin: 0; padding-left: 20px; }
+  .findings li { margin-bottom: 12px; }
+  .btnrow { text-align: center; margin: 40px 0 8px; }
+  .btn {
+    display: inline-block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    margin: 6px;
+  }
+  .btn-solid { background: var(--ink); color: #fff; }
+  .btn-ghost { border: 1px solid var(--ink); color: var(--ink); }
+  .footer { text-align: center; color: var(--soft); font-size: 14px; margin-top: 60px; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  @media (max-width: 560px) {
+    h1 { font-size: 30px; }
+    .stats { grid-template-columns: 1fr; }
+    .hero svg { height: 220px; }
+  }
+</style>
+</head>
+<body>
+<div class="hero">
+  <svg viewBox="0 0 760 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylised speech bubbles made of repeating words">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1b1b3a"/>
+        <stop offset="1" stop-color="#101025"/>
+      </linearGradient>
+    </defs>
+    <rect width="760" height="300" fill="url(#sky)"/>
+    <g font-family="Helvetica Neue, Arial, sans-serif" fill="#E0567A" opacity="0.9">
+      <text x="60" y="90" font-size="34" font-weight="800">like</text>
+      <text x="250" y="70" font-size="26" font-weight="700" fill="#D4A537">literally</text>
+      <text x="470" y="95" font-size="40" font-weight="800">love</text>
+      <text x="120" y="160" font-size="22" fill="#15868C" font-weight="700">just</text>
+      <text x="230" y="175" font-size="30" font-weight="800">vibe</text>
+      <text x="430" y="165" font-size="24" fill="#D4A537" font-weight="700">honestly</text>
+      <text x="600" y="150" font-size="20" fill="#15868C" font-weight="700">connection</text>
+      <text x="80" y="235" font-size="26" fill="#D4A537" font-weight="700">you know</text>
+      <text x="320" y="245" font-size="34" font-weight="800">type</text>
+      <text x="520" y="240" font-size="28" font-weight="700">100%</text>
+    </g>
+    <g fill="none" stroke="#3a3a63" stroke-width="2" opacity="0.55">
+      <path d="M40 110 q-14 0 -14 14 v40 q0 14 14 14 h120 q14 0 14 -14 v-40 q0 -14 -14 -14 z"/>
+      <path d="M520 60 q14 0 14 14 v34 q0 14 -14 14 h-90 q-14 0 -14 -14 v-34 q0 -14 14 -14 z"/>
+    </g>
+  </svg>
+</div>
+
+<div class="container">
+  <p class="kicker">Data Story &middot; Natural-Language Analysis</p>
+  <h1>How Simple Is the Language on <em>Love Island</em>?</h1>
+  <p class="lede">Reality TV is famous for sounding repetitive. I turned a whole season of
+  <em>Love Island USA</em> into data to find out exactly <em>how</em> simple the talking really is.</p>
+  <p class="byline">By Jeremy Lee</p>
+
+  <div class="stats">
+    <div class="stat"><div class="num">61%</div><div class="lab">of everything said is just the 100 most common words</div></div>
+    <div class="stat"><div class="num">3rd&ndash;5th</div><div class="lab">grade reading level of the dialogue</div></div>
+    <div class="stat"><div class="num">~1,250</div><div class="lab">words you'd need to follow 95% of the show</div></div>
+  </div>
+
+  <h2>The question</h2>
+  <p>We all <em>feel</em> like reality dating shows use a tiny, looping vocabulary &mdash;
+  the same handful of words ("like", "literally", "connection", "vibe") over and over.
+  But "it feels repetitive" isn't a measurement. So I took every episode of
+  <em>Love Island USA</em> Season 4, collected the spoken transcripts, and measured the
+  language the way a linguist would: how varied is it, how hard is it to read, and how
+  many words you'd actually need to know to understand it.</p>
+
+  <h2>What I did, in plain English</h2>
+  <p>I gathered the transcripts for the whole season into one big text "corpus" &mdash;
+  one file per episode. Then a set of Python scripts counted and analysed the words:
+  which words appear most, how often rare words show up, the share of filler words,
+  the emotional tone, and the reading grade level. No special background needed to read
+  the results below &mdash; each chart answers one simple question.</p>
+
+  <h2>What the numbers say</h2>
+
+  <h3>1. A handful of words do almost all the work</h3>
+  <p>If you rank every word by how often it's spoken, the top 100 words alone make up
+  <strong>61%</strong> of all the talking. The pattern follows an almost textbook
+  "Zipf" curve (a few words used constantly, a long tail used rarely) &mdash; so cleanly
+  that the trend line fits 98% of the data.</p>
+  <figure class="figure">
+    <img src="V4/figures/02_word_frequency_distribution.png" alt="Word frequency distribution following a Zipf curve"/>
+    <figcaption>A few words are spoken constantly; most words are spoken rarely.</figcaption>
+  </figure>
+  <figure class="figure">
+    <img src="V4/figures/05_wordcloud_no_stopwords.png" alt="Word cloud of the most common meaningful words"/>
+    <figcaption>The biggest words here are the ones said most often once routine filler is removed.</figcaption>
+  </figure>
+
+  <h3>2. You don't need a big vocabulary to follow along</h3>
+  <p>Knowing roughly the <strong>1,250 most common word families</strong> is enough to
+  understand 95% of everything said &mdash; and about 2,550 covers 98%. For comparison,
+  everyday written English usually needs around 3,000. In other words, the show is built
+  out of words almost everyone already knows.</p>
+  <figure class="figure">
+    <img src="V4/figures/11_vocabulary_coverage.png" alt="Vocabulary coverage curve showing how few words are needed"/>
+    <figcaption>How much of the show you understand as you learn more of its words.</figcaption>
+  </figure>
+
+  <h3>3. It reads like a children's book</h3>
+  <p>Run the dialogue through standard readability formulas and it lands at about a
+  <strong>3rd-to-5th grade level</strong>. Nearly <strong>98%</strong> of the words used
+  are among the 3,000 most familiar words in English.</p>
+  <figure class="figure">
+    <img src="V4/figures/12_reading_level.png" alt="Reading level scores placing the show at 3rd to 5th grade"/>
+    <figcaption>Several readability measures all agree: this is very easy language.</figcaption>
+  </figure>
+
+  <h3>4. Upbeat, opinion-heavy, and steady all season</h3>
+  <p>The tone stays consistently positive and highly subjective from start to finish, and
+  the variety of language doesn't really change as the season goes on. It's emotional talk
+  built from a small, familiar word set.</p>
+
+  <div class="findings">
+    <h3>The headline findings</h3>
+    <ul>
+      <li><strong>61% of all speech</strong> is just the 100 most common words; word frequency is almost perfectly Zipfian (R&sup2; = 0.98).</li>
+      <li>The <strong>~1,250 most common word families cover 95%</strong> of the show (vs ~3,000 for everyday English); ~2,550 covers 98%.</li>
+      <li>It reads at roughly a <strong>3rd&ndash;5th grade level</strong>, and 97.9% of words are among the 3,000 most familiar English words.</li>
+      <li>Low lexical diversity with no trend across the season; a uniformly positive, highly subjective tone with relatively few adjectives (8.4%).</li>
+    </ul>
+  </div>
+
+  <h2>Why it's interesting</h2>
+  <p>None of this is a knock on the show &mdash; simple, familiar language is exactly what
+  makes it easy to watch with the sound half-on while you scroll your phone. What's fun is
+  being able to put a real <em>number</em> on something everyone senses: yes, the talking is
+  repetitive, and here's precisely how repetitive.</p>
+
+  <div class="btnrow">
+    <a class="btn btn-solid" href="V4/LoveIsland_LexicalAnalysis_V4.pdf">Read the full write-up (PDF)</a>
+    <a class="btn btn-ghost" href="https://github.com/lyhjeremy/love-island-lexical-analysis">View the code &amp; data on GitHub</a>
+  </div>
+
+  <p class="footer">Built with Python (pandas, NLTK, textstat) &middot; Transcripts analysed for research/education &middot; &copy; 2026 Jeremy Lee &middot; MIT License</p>
+</div>
+</body>
+</html>

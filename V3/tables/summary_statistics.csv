@@ -1,0 +1,8 @@
+Metric,Value
+Total episodes,38
+Total word tokens,"224,815"
+Unique word types,"7,856"
+Type-Token Ratio (TTR),0.0349
+Average word length (chars),4.03
+Total sentences (est.),"36,758"
+Avg words per sentence,6.1

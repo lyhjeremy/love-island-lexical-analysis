@@ -1,0 +1,13 @@
+test,statistic,p_value
+Cumulative % of tokens — top 10 words,22.72%,
+Cumulative % of tokens — top 50 words,48.71%,
+Cumulative % of tokens — top 100 words,61.02%,
+Cumulative % of tokens — top 1000 words,91.11%,
+Zipf regression slope (log freq ~ log rank),-1.453,0.00e+00
+Zipf regression R²,0.981,
+MTLD vs episode — Pearson r,-0.107,0.521
+MTLD vs episode — Spearman rho,-0.028,0.868
+TTR vs episode — Pearson r,0.048,0.775
+TTR vs episode — Spearman rho,0.109,0.514
+Sentiment polarity vs episode — Pearson r,-0.129,0.441
+Sentiment polarity vs episode — Spearman rho,-0.149,0.371
