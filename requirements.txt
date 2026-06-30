@@ -1,0 +1,12 @@
+pandas
+numpy
+scipy
+nltk
+textblob
+textstat
+wordcloud
+matplotlib
+seaborn
+beautifulsoup4
+selenium
+webdriver-manager
