@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>How simple is reality TV English? — a corpus study of Love Island USA S4</title>
+<meta name="description" content="The 100 most common words make up 61% of all speech. About 1,250 word families cover 95% of the show, against roughly 3,000 for everyday English. It reads at a 3rd–5th grade level." />
+<meta name="theme-color" content="#FBF8F1" />
+<meta property="og:title" content="How simple is reality TV English?" />
+<meta property="og:description" content="A full-season corpus study: Zipf at R² = 0.98, 95% coverage from 1,250 word families, and a 3rd–5th grade reading level." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lyhjeremy.github.io/love-island-lexical-analysis/overview/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #FBF8F1;
+    --card: #FFFFFF;
+    --plate: #FFFFFF;
+    --ink: #1a1a2e;
+    --ink2: #3d3d55;
+    --muted: #6B7280;
+    --rule: #E5DCC7;
+    --accent: #BE123C;
+    --accent2: #6D28D9;
+    --link: #0E7490;
+    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --sans: 'Source Sans 3', -apple-system, system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+    --shadow: 0 1px 2px rgba(26,26,46,.05), 0 10px 34px rgba(26,26,46,.07);
+    --spine:  92px;
+    --col:    min(100% - 2.6rem, 62rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14141f;
+      --card: #1c1c2a;
+      --plate: #f7f4ec;
+      --ink: #F2EFE6;
+      --ink2: #C9C4B6;
+      --muted: #918B7D;
+      --rule: #33313f;
+      --accent: #FB7185;
+      --accent2: #A78BFA;
+      --link: #22D3EE;
+      --shadow: 0 1px 2px rgba(0,0,0,.32), 0 10px 34px rgba(0,0,0,.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--serif); font-size: clamp(17px, 0.55rem + 0.6vw, 19.5px);
+    line-height: 1.68; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--link); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  strong { font-weight: 700; color: var(--ink); }
+  code { font-family: var(--mono); font-size: .86em;
+         background: color-mix(in srgb, var(--ink) 7%, transparent);
+         padding: .12em .38em; border-radius: 4px; }
+  .wrap { width: var(--col); margin: 0 auto; }
+
+  .eyebrow { font-family: var(--mono); font-weight: 600; font-size: 11.5px;
+             letter-spacing: .17em; text-transform: uppercase; color: var(--muted);
+             margin: 0 0 14px; }
+
+  .masthead { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; padding: 30px 0 0; }
+  .logo { font-family: var(--sans); font-weight: 800; font-size: 21px;
+          letter-spacing: -.02em; display: flex; align-items: center; gap: 9px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); flex: none; }
+  .tagline { font-size: 15px; color: var(--ink2); font-family: var(--sans); }
+
+  .hero { padding: 44px 0 54px; }
+  .kicker { font-family: var(--sans); font-size: clamp(18px, 2.1vw, 23px); font-weight: 600;
+            color: var(--muted); margin: 0 0 8px; letter-spacing: -.01em; }
+  .hero h1 { font-family: var(--sans); font-size: clamp(37px, 6vw, 72px); font-weight: 800;
+             letter-spacing: -.035em; line-height: 1.04; margin: 0; max-width: 17ch; }
+  .hero-sub { margin: 24px 0 0; font-size: 1.06em; color: var(--ink2); max-width: 60ch; }
+
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; align-items: center; }
+  .btn { display: inline-block; padding: 13px 26px; border-radius: 8px;
+         font-family: var(--sans); font-weight: 700; font-size: 16px;
+         text-decoration: none; border: 1px solid var(--ink); transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .textlink { font-family: var(--sans); font-size: 16px; font-weight: 600; color: var(--ink2);
+              text-decoration: underline; text-underline-offset: 4px;
+              text-decoration-thickness: 1px; }
+  .textlink:hover { color: var(--ink); }
+
+  .claims { display: grid; grid-template-columns: 1fr; gap: 0 52px; margin: 50px 0 0; }
+  @media (min-width: 760px) { .claims { grid-template-columns: 1fr 1fr; } }
+  .claim { padding: 18px 0 20px; border-top: 1px solid var(--rule); }
+  .claim:first-child, .claim:nth-child(2) { border-top: 2px solid var(--ink); }
+  @media (max-width: 759px) { .claim:nth-child(2) { border-top: 1px solid var(--rule); } }
+  .claim .n { font-family: var(--sans); font-weight: 800; font-size: 40px; line-height: 1.05;
+              color: var(--accent); letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .claim h3 { margin: 0 0 6px; }
+  .claim p { margin: 9px 0 0; font-size: 15.5px; color: var(--ink2); line-height: 1.5;
+             font-family: var(--sans); }
+
+  .route { position: relative; padding-bottom: 30px; }
+  .route::before { content: ""; position: absolute; left: calc(var(--spine) / 2); top: 8px;
+                   bottom: 80px; width: 2px; background: var(--rule); }
+  .stop { position: relative; padding: 0 0 76px var(--spine); }
+  .stop::before { content: ""; position: absolute; left: calc(var(--spine) / 2 - 7px); top: 7px;
+                  width: 16px; height: 16px; border-radius: 50%;
+                  background: var(--paper); border: 2px solid var(--ink); box-sizing: border-box; }
+  .stop--key::before { background: var(--accent); border-color: var(--accent); }
+  .stop--warn::before { background: var(--accent2); border-color: var(--accent2); }
+  .stop--end::before { background: var(--ink); }
+
+  h2 { font-family: var(--sans); font-size: clamp(27px, 3.7vw, 38px); font-weight: 800;
+       letter-spacing: -.027em; line-height: 1.13; margin: 12px 0 16px; max-width: 19ch; }
+  h3 { font-family: var(--sans); font-size: 17px; font-weight: 700; margin: 0 0 7px;
+       letter-spacing: -.012em; }
+  .stop p { margin: 0 0 17px; max-width: 60ch; color: var(--ink2); }
+
+  .bignum { font-family: var(--sans); font-weight: 800; font-size: clamp(74px, 10vw, 128px);
+            line-height: .86; letter-spacing: -.05em; margin: 6px 0 4px; color: var(--accent);
+            font-variant-numeric: tabular-nums; }
+  .bignum-note { font-family: var(--sans); font-size: 16px; color: var(--muted); margin: 0 0 20px; }
+
+  /* A white-background chart would glow in dark mode; the plate makes it read
+     as a deliberately printed page instead. */
+  figure { margin: 28px 0 0; }
+  .plate { background: var(--plate); border: 1px solid var(--rule); border-radius: 10px;
+           padding: 14px; box-shadow: var(--shadow); overflow: hidden; }
+  .plate img { border-radius: 4px; }
+  .plate--flush { padding: 0; }
+  .shot { border-radius: 10px; border: 1px solid var(--rule); box-shadow: var(--shadow);
+          overflow: hidden; background: var(--card); }
+  /* min() so the cap never exceeds the column on a phone */
+  .shot--narrow { max-width: min(430px, 100%); }
+  figcaption { margin-top: 11px; font-family: var(--sans); font-size: 14.5px;
+               color: var(--muted); line-height: 1.5; }
+  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+            gap: 22px; margin-top: 28px; }
+  .panels figure { margin: 0; }
+
+  .pull { margin: 30px 0 0; padding: 20px 25px; border-left: 3px solid var(--accent);
+          background: color-mix(in srgb, var(--accent) 7%, transparent);
+          border-radius: 0 8px 8px 0; }
+  .pull p { margin: 0 0 9px; color: var(--ink); max-width: none; }
+  .pull p:last-of-type { margin: 0; }
+  .pull .who { font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+               text-transform: uppercase; color: var(--muted); display: block; margin-top: 9px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+          gap: 1px; margin-top: 28px; background: var(--rule);
+          border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  .cell { background: var(--paper); padding: 22px 20px; }
+  .cell p { font-size: 15px; margin: 0; color: var(--ink2); max-width: none;
+            line-height: 1.55; font-family: var(--sans); }
+
+  /* results tables: scroll inside their own box, never the page */
+  .tablewrap { margin-top: 26px; overflow-x: auto; border: 1px solid var(--rule);
+               border-radius: 10px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; min-width: 480px;
+          font-family: var(--sans); font-size: 15.5px; }
+  th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--rule); }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+       text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td { color: var(--ink2); font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  .win td { color: var(--ink); font-weight: 700;
+            background: color-mix(in srgb, var(--accent) 8%, transparent); }
+
+  /* real terminal output, quoted verbatim */
+  .term { margin-top: 26px; background: #14141f; color: #e6e3da; border-radius: 10px;
+          padding: 18px 20px; overflow-x: auto; box-shadow: var(--shadow);
+          border: 1px solid #2a2a3a; }
+  .term pre { margin: 0; font-family: var(--mono); font-size: 13px; line-height: 1.62;
+              white-space: pre; }
+  .term .c { color: #9aa08f; }
+  .term .g { color: #7fd18f; }
+  .term .y { color: #E3BC5E; }
+
+  .specs { margin-top: 26px; border-top: 1px solid var(--rule); }
+  .spec { display: grid; grid-template-columns: 1fr; gap: 2px;
+          padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  @media (min-width: 700px) { .spec { grid-template-columns: 178px 1fr; gap: 24px; } }
+  .spec dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em;
+             text-transform: uppercase; color: var(--muted); padding-top: 4px; }
+  .spec dd { margin: 0; font-size: 16px; color: var(--ink2); font-family: var(--sans); }
+
+  .close { padding: 6px 0 80px var(--spine); position: relative; }
+  .close h2 { max-width: 20ch; }
+  footer { border-top: 1px solid var(--rule); padding: 28px 0 60px;
+           font-family: var(--sans); font-size: 14.5px; color: var(--muted); }
+  footer a { color: var(--ink2); }
+  footer p { margin: 0 0 8px; }
+
+  @media (max-width: 640px) {
+    :root { --spine: 38px; }
+    .hero { padding: 36px 0 46px; }
+    .stop { padding-bottom: 58px; }
+    .plate { padding: 9px; }
+    .term { padding: 14px 14px; }
+    .term pre { font-size: 11.5px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <div class="logo"><span class="dot" aria-hidden="true"></span>Love Island Lexical Analysis</div>
+    <div class="tagline">a full season, as a corpus</div>
+  </header>
+
+  <section class="hero">
+    <p class="kicker">People say reality TV is linguistically simple.</p>
+    <h1>It is, and you can put a number on exactly how simple.</h1>
+
+    <p class="hero-sub">
+      A corpus study of every episode of <em>Love Island USA</em> season 4. The
+      <strong>100 most common words are 61%</strong> of everything anyone says.
+      Word frequency is near-perfectly Zipfian at <strong>R² = 0.98</strong>. And
+      the practically useful number: knowing about <strong>1,250 word
+      families</strong> gets you <strong>95%</strong> of the show, against roughly
+      <strong>3,000</strong> for everyday English. For a language learner, that
+      gap is the whole point.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Read the paper (PDF)</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">or the code and corpus</a>
+    </div>
+
+    <div class="claims">
+      <div class="claim">
+        <div class="n">61%</div>
+        <p>of all speech comes from just the 100 most common words.</p>
+      </div>
+      <div class="claim">
+        <div class="n">1,250</div>
+        <p>word families for 95% coverage. Everyday English needs about 3,000 for
+           the same.</p>
+      </div>
+      <div class="claim">
+        <div class="n">3rd–5th</div>
+        <p>grade reading level, with 97.9% of words among the 3,000 most familiar
+           in English.</p>
+      </div>
+      <div class="claim">
+        <div class="n">R² = 0.98</div>
+        <p>fit to Zipf's law. The vocabulary is not unusual in shape, only in how
+           little of it gets used.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+<div class="route">
+
+  <section class="stop">
+    <p class="eyebrow">Start · why bother</p>
+    <h2>"Simple" is a compliment if you are learning the language</h2>
+    <p>
+      The obvious framing is mockery, and it is the least interesting one. The
+      genuinely useful question is the one a language learner asks: <em>how much
+      English do I need before I can follow this?</em> Native-speaker television is
+      the standard advice for intermediate learners and most of it is far too hard.
+    </p>
+    <p>
+      A corpus answers that directly. Build the vocabulary coverage curve and the
+      answer comes out as a number of words rather than an opinion.
+    </p>
+  </section>
+
+  <section class="stop stop--key">
+    <p class="eyebrow">↓ the useful number</p>
+    <h2>1,250 words gets you 95% of it</h2>
+
+    <div class="bignum">1,250</div>
+    <p class="bignum-note">word families for 95% coverage. About 2,550 gets you to 98%.</p>
+
+    <p>
+      Standard estimates put everyday English at roughly <strong>3,000</strong>
+      word families for the same 95% threshold. This show needs
+      <strong>well under half</strong> of that. For someone at an intermediate
+      level, that difference is the difference between following along and
+      constantly reaching for a dictionary.
+    </p>
+    <figure>
+      <div class="plate">
+        <img width="4288" height="2311" src="../V4/figures/11_vocabulary_coverage.png" fetchpriority="high"
+          alt="Vocabulary coverage curve showing the percentage of all speech covered as more word families are known, crossing 95 percent at about 1,250 families." />
+      </div>
+      <figcaption>The coverage curve. The 95% line is the one that matters.</figcaption>
+    </figure>
+    <figure>
+      <div class="plate">
+        <img width="4312" height="1991" src="../V4/figures/12_reading_level.png" loading="lazy"
+          alt="Reading-level scores for the corpus placing it around a third to fifth grade level across several readability measures." />
+      </div>
+      <figcaption>Reading level across several standard measures.</figcaption>
+    </figure>
+  </section>
+
+  <section class="stop">
+    <p class="eyebrow">↓ the distribution</p>
+    <h2>Textbook Zipf, unusually steep in effect</h2>
+    <p>
+      Word frequency follows Zipf's law almost exactly, at <strong>R² = 0.98</strong>.
+      That in itself is unremarkable — nearly all natural language does. What is
+      notable is the consequence here: the top 100 words carry
+      <strong>61%</strong> of all speech, so the long tail is doing very little
+      work.
+    </p>
+    <div class="panels">
+      <figure>
+        <div class="plate">
+          <img width="4712" height="3524" src="../V4/figures/02_word_frequency_distribution.png" loading="lazy"
+            alt="Log-log plot of word rank against frequency forming a near-straight line, the signature of a Zipfian distribution." />
+        </div>
+        <figcaption><strong>Zipf</strong> — a straight line on log-log axes.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate">
+          <img width="4712" height="3912" src="../V4/figures/01_top50_words.png" loading="lazy"
+            alt="Bar chart of the fifty most frequent words in the corpus, dominated by function words and a few show-specific terms." />
+        </div>
+        <figcaption><strong>Top 50</strong> — function words, and a few the show made its own.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <div class="plate">
+        <img width="5841" height="3112" src="../V4/figures/05_wordcloud_no_stopwords.png" loading="lazy"
+          alt="Word cloud of the most frequent content words once stopwords are removed, with relationship and feeling vocabulary dominating." />
+      </div>
+      <figcaption>With stopwords removed, what the season is actually about.</figcaption>
+    </figure>
+  </section>
+
+  <section class="stop">
+    <p class="eyebrow">↓ texture</p>
+    <h2>Flat, positive, and full of filler</h2>
+    <p>
+      Lexical diversity sits at a mean <strong>MTLD of 59.96</strong> with
+      <strong>no trend across the season</strong> — episode 1 and the finale are
+      linguistically indistinguishable. Sentiment is uniformly positive and highly
+      subjective, and adjectives make up only <strong>8.4%</strong> of speech,
+      which is low for such emotionally saturated content.
+    </p>
+    <p>
+      Filler words are their own chart, and they are not incidental. This is
+      unscripted speech, which is exactly why it is easy: unscripted speakers reuse
+      a small stock of words and lean on filler to buy time.
+    </p>
+    <div class="panels">
+      <figure>
+        <div class="plate">
+          <img width="5469" height="3916" src="../V4/figures/03_lexical_diversity_per_episode.png" loading="lazy"
+            alt="Lexical diversity measured per episode across the season, showing a flat line with no upward or downward trend." />
+        </div>
+        <figcaption><strong>Diversity per episode</strong> — no trend at all.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate">
+          <img width="4712" height="2312" src="../V4/figures/06_filler_words.png" loading="lazy"
+            alt="Frequency of common filler words across the corpus, with like and just among the most frequent." />
+        </div>
+        <figcaption><strong>Filler</strong> — the signature of unscripted speech.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate">
+          <img width="5512" height="3111" src="../V4/figures/08_sentiment_per_episode.png" loading="lazy"
+            alt="Sentiment polarity and subjectivity per episode, staying positive and highly subjective throughout the season." />
+        </div>
+        <figcaption><strong>Sentiment</strong> — positive throughout, and very subjective.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate">
+          <img width="3912" height="2312" src="../V4/figures/07_pos_distribution.png" loading="lazy"
+            alt="Part-of-speech distribution across the corpus, with adjectives making up about 8.4 percent." />
+        </div>
+        <figcaption><strong>Parts of speech</strong> — only 8.4% adjectives.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="stop stop--warn">
+    <p class="eyebrow">↓ what this cannot tell you</p>
+    <h2>One season, and transcripts are not speech</h2>
+    <p>
+      This is a single season of a single show, so nothing here generalises to
+      "reality TV" as a genre without more seasons to check against.
+    </p>
+    <p>
+      More importantly, transcripts flatten things that matter. Overlapping speech,
+      prosody, and the pace of delivery are all invisible to a word-frequency
+      analysis, and all three affect how hard something actually is to follow. A
+      show can be lexically easy and still hard to parse at speed. The coverage
+      number is a floor on difficulty, not the whole of it.
+    </p>
+    <p>
+      Reading-level measures were built for written prose and applied here to
+      conversational speech. They are reported because they are comparable across
+      studies, not because a grade level is a natural unit for dialogue.
+    </p>
+  </section>
+
+  <section class="stop stop--end">
+    <p class="eyebrow">Finish · how it was built</p>
+    <h2>Where the numbers come from</h2>
+    <p>
+      The repository ships the cleaned corpus, one <code>.txt</code> per episode
+      plus a combined CSV, so the analysis is checkable rather than merely
+      described. The paper is written in Markdown, converted to LaTeX by a script
+      in the repo, and compiled to PDF.
+    </p>
+    <dl class="specs">
+      <div class="spec"><dt>Corpus</dt><dd>Every episode of <em>Love Island USA</em> season 4, scraped and cleaned, one row per episode</dd></div>
+      <div class="spec"><dt>Coverage</dt><dd>Word-family coverage curve against a standard frequency list</dd></div>
+      <div class="spec"><dt>Diversity</dt><dd>MTLD, which is stable across differing text lengths in a way type-token ratio is not</dd></div>
+      <div class="spec"><dt>Built with</dt><dd>Python, pandas, nltk, textblob, textstat, wordcloud, matplotlib</dd></div>
+      <div class="spec"><dt>Figures</dt><dd>Twelve, at 400 DPI, regenerated by two scripts writing to <code>LI_OUTPUT_DIR</code></dd></div>
+      <div class="spec"><dt>Related</dt><dd>The same lens on pop lyrics in <a href="https://lyhjeremy.github.io/lyrics-complexity-over-time/">Are song lyrics getting simpler?</a>, and turned into a tool anyone can point at a book in the <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a></dd></div>
+    </dl>
+  </section>
+
+</div>
+</div>
+
+<div class="wrap">
+  <section class="close">
+    <h2>1,250 words, and you can follow the whole season</h2>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Read the paper (PDF)</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">or the code and corpus</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Love Island Lexical Analysis ·
+      <a href="../">Summary</a> ·
+      <a href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Paper</a> ·
+      <a href="https://github.com/lyhjeremy/love-island-lexical-analysis">Source</a> ·
+      MIT © 2026 Jeremy Lee
+    </p>
+  </footer>
+</div>
+</body>
+</html>

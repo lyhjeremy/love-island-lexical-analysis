@@ -6,6 +6,7 @@ sentiment, the vocabulary load needed to follow it, and its reading level.
 
 > 📄 **[Read the full paper (PDF)](V4/LoveIsland_LexicalAnalysis_V4.pdf)** &nbsp;·&nbsp;
 > 🌐 **[Plain-English summary](https://lyhjeremy.github.io/love-island-lexical-analysis/)**
+> 📖 **In depth:** https://lyhjeremy.github.io/love-island-lexical-analysis/overview/
 
 ## Folder structure
 
