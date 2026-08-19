@@ -1,12 +1,14 @@
 # Lexical Analysis of Vocabulary Complexity in *Love Island USA* Season 4
 
+Design and copy follow [these standards](https://github.com/lyhjeremy/lyhjeremy/blob/main/DESIGN_STANDARDS.md).
+
 A corpus-based study of how simple/repetitive the show's spoken language is:
 vocabulary richness, word-frequency (Zipf), filler words, part of speech,
 sentiment, the vocabulary load needed to follow it, and its reading level.
 
-> 📄 **[Read the full paper (PDF)](V4/LoveIsland_LexicalAnalysis_V4.pdf)** &nbsp;·&nbsp;
-> 🌐 **[Plain-English summary](https://lyhjeremy.github.io/love-island-lexical-analysis/)**
-> 📖 **In depth:** https://lyhjeremy.github.io/love-island-lexical-analysis/overview/
+> **[Read the full paper (PDF)](V4/LoveIsland_LexicalAnalysis_V4.pdf)** &nbsp;·&nbsp;
+> **[Plain-English summary](https://lyhjeremy.github.io/love-island-lexical-analysis/)**
+> **In depth:** https://lyhjeremy.github.io/love-island-lexical-analysis/overview/
 
 ## Folder structure
 

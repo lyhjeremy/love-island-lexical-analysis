@@ -7,7 +7,7 @@
 
 ## Abstract
 
-This paper asks a simple question about a popular reality show: *how hard is its language?* Using the subtitle transcripts of all 38 episodes of *Love Island USA* Season 4 (2022) — a 224,815-word corpus of on-screen speech — we measure vocabulary richness, word frequency, reading level, and the size of vocabulary a viewer actually needs. The answer is consistent across every measure: the show's language is small, repetitive, and very easy. The 100 most common words make up 61% of everything said, and word frequency follows Zipf's Law almost perfectly (R² = 0.98). A viewer who knows only the **~1,250 most common word families understands 95% of the show** — less than half the ~3,000 word families normally needed for everyday English. By standard formulas the dialogue reads at roughly a **3rd–5th grade level**, and 98% of all words spoken come from the 3,000 most familiar words in English. The talk is emotional and opinion-heavy but lexically thin: adjectives make up only 8.4% of words, and a handful of discourse markers (*like*, *know*, *yeah*) do much of the work. The show presents its audience with a narrow, highly accessible slice of English.
+This paper asks a simple question about a popular reality show: *how hard is its language?* Using the subtitle transcripts of all 38 episodes of *Love Island USA* Season 4 (2022). A 224,815-word corpus of on-screen speech. We measure vocabulary richness, word frequency, reading level, and the size of vocabulary a viewer actually needs. The answer is consistent across every measure: the show's language is small, repetitive, and very easy. The 100 most common words make up 61% of everything said, and word frequency follows Zipf's Law almost perfectly (R² = 0.98). A viewer who knows only the **~1,250 most common word families understands 95% of the show.** Less than half the ~3,000 word families normally needed for everyday English. By standard formulas the dialogue reads at roughly a **3rd–5th grade level**, and 98% of all words spoken come from the 3,000 most familiar words in English. The talk is emotional and opinion-heavy but lexically thin: adjectives make up only 8.4% of words, and a handful of discourse markers (*like*, *know*, *yeah*) do much of the work. The show presents its audience with a narrow, highly accessible slice of English.
 
 **Keywords:** lexical diversity, reality television, vocabulary load, readability, corpus linguistics, *Love Island*
 
@@ -16,7 +16,7 @@ This paper asks a simple question about a popular reality show: *how hard is its
 ## Key Findings at a Glance
 
 - **You need very few words to follow it.** Knowing the ~1,250 most frequent word families is enough to understand 95% of all speech in the show; ~2,550 gets you to 98%. For comparison, understanding everyday English normally takes about 3,000 word families for 95% coverage and 6,000–7,000 for 98%.
-- **It reads at roughly a 3rd–5th grade level.** Flesch–Kincaid puts the dialogue at grade 2.8 and a reading-ease score of 90/100 ("very easy"). 97.9% of all words spoken are among the 3,000 most familiar English words — so the general public would have no trouble understanding it.
+- **It reads at roughly a 3rd–5th grade level.** Flesch–Kincaid puts the dialogue at grade 2.8 and a reading-ease score of 90/100 ("very easy"). 97.9% of all words spoken are among the 3,000 most familiar English words, so the general public would have no trouble understanding it.
 - **A tiny core of words dominates.** The top 10 words are 22.7% of all speech; the top 100 are 61%. Word frequencies follow Zipf's Law almost exactly (R² = 0.98).
 - **Low lexical diversity.** Mean MTLD is 59.96, below the ~72 benchmark for ordinary spontaneous speech, and it does not change across the season.
 - **Emotional but plain.** Speech is uniformly positive and highly subjective, yet adjectives are only 8.4% of words; meaning is carried by verbs and pronouns, not rich description.
@@ -25,7 +25,7 @@ This paper asks a simple question about a popular reality show: *how hard is its
 
 ## 1. Introduction
 
-Reality television is one of the dominant media formats of the twenty-first century, and *Love Island* — a British format now franchised worldwide — is among the most-watched. Unlike scripted drama, it captures speech roughly as it happens: contestants live in a villa, are filmed continuously, and produce hours of unrehearsed conversation per episode. That makes it a useful, if unusual, window onto a particular register of casual spoken English.
+Reality television is one of the dominant media formats of the twenty-first century, and *Love Island*. A British format now franchised worldwide. Is among the most-watched. Unlike scripted drama, it captures speech roughly as it happens: contestants live in a villa, are filmed continuously, and produce hours of unrehearsed conversation per episode. That makes it a useful, if unusual, window onto a particular register of casual spoken English.
 
 The motivation is a well-known fact from applied linguistics. English has around 170,000 words in current use, an educated adult actively uses perhaps 20,000–35,000, and comfortable everyday conversation needs only about 3,000 high-frequency word families (Nation, 2001; Adolphs & Schmitt, 2003). If ordinary conversation already concentrates on so few words, informal television may narrow the range even further. This paper measures exactly how narrow.
 
@@ -40,11 +40,11 @@ The motivation is a well-known fact from applied linguistics. English has around
 
 ## 2. Background
 
-**Measuring vocabulary diversity.** The simplest measure, the Type–Token Ratio (TTR) — unique words divided by total words — is intuitive but drops automatically as a text gets longer (Richards, 1987). Length-robust measures are preferred: Root TTR partly corrects for length, and the Measure of Textual Lexical Diversity (MTLD; McCarthy & Jarvis, 2010) tracks how long a stretch of text can run before its running TTR falls below a threshold. As a rule of thumb, spontaneous speech scores roughly 60–100 on MTLD.
+**Measuring vocabulary diversity.** The simplest measure, the Type–Token Ratio (TTR), unique words divided by total words, is intuitive but drops automatically as a text gets longer (Richards, 1987). Length-robust measures are preferred: Root TTR partly corrects for length, and the Measure of Textual Lexical Diversity (MTLD; McCarthy & Jarvis, 2010) tracks how long a stretch of text can run before its running TTR falls below a threshold. As a rule of thumb, spontaneous speech scores roughly 60–100 on MTLD.
 
 **How many words you need.** Vocabulary researchers express difficulty as *coverage*: the share of a text you understand if you know its most frequent words. Knowing about 3,000 word families gives roughly 95% coverage of everyday spoken English, and 6,000–7,000 families gives about 98% (Adolphs & Schmitt, 2003; Nation, 2006). Television sits in the same range: Webb and Rodgers (2009) found that ~3,000 families cover 95% of TV dialogue and ~7,000 cover 98%. These figures give us a yardstick to compare *Love Island* against.
 
-**Reading level.** Readability formulas convert sentence length and word length/syllables into a U.S. school grade. Flesch–Kincaid (Kincaid et al., 1975) and the Dale–Chall familiar-word approach (Dale & Chall, 1948) are standard. Public-facing materials — surveys, health information, news — are typically written at a 5th–8th grade level so the general population can follow them, with grade 5 often cited as a conservative target.
+**Reading level.** Readability formulas convert sentence length and word length/syllables into a U.S. school grade. Flesch–Kincaid (Kincaid et al., 1975) and the Dale–Chall familiar-word approach (Dale & Chall, 1948) are standard. Public-facing materials, surveys, health information, news, are typically written at a 5th–8th grade level so the general population can follow them, with grade 5 often cited as a conservative target.
 
 **Reality TV talk.** Prior work finds reality contestants mix private conversation with performance, since they know they are filmed, which can push speech toward safe, broadly understood language (Thornborrow & Morris, 2004), and toward hedges and vague "approximators" such as *like* and *kind of* (Channell, 1994; Fleiss, 2018). No published study has examined *Love Island USA* specifically; this paper begins to fill that gap.
 
@@ -87,7 +87,7 @@ Set against the benchmarks, the show is markedly easier than general English. Ev
 
 ### 4.3 What reading level is the show? (RQ3)
 
-By standard readability formulas the dialogue is very easy (Figure 4). Flesch–Kincaid places it at **grade 2.8** (per-episode range 2.3–3.7), the consensus grade estimate is **3.0**, and the Flesch Reading Ease score is **90.2 out of 100** — the "very easy" band, understandable by an average 11-year-old. Syllable-weighted formulas read slightly higher (SMOG ≈ 6.9), because the show does use the occasional long word (*relationship*, *definitely*), but every measure keeps the language at or near the grade-5 mark used for general-public materials — never in the difficult range.
+By standard readability formulas the dialogue is very easy (Figure 4). Flesch–Kincaid places it at **grade 2.8** (per-episode range 2.3–3.7), the consensus grade estimate is **3.0**, and the Flesch Reading Ease score is **90.2 out of 100.** The "very easy" band, understandable by an average 11-year-old. Syllable-weighted formulas read slightly higher (SMOG ≈ 6.9), because the show does use the occasional long word (*relationship*, *definitely*), but every measure keeps the language at or near the grade-5 mark used for general-public materials, never in the difficult range.
 
 **Figure 4.** Reading level (Flesch–Kincaid grade) vs. common benchmarks; other formulas place the show similarly low.  
 `[output/figures/12_reading_level.png]`
@@ -96,21 +96,21 @@ The vocabulary evidence agrees: only **2.1% of all words spoken fall outside the
 
 ### 4.4 Lexical diversity across the season
 
-Per-episode MTLD averages 59.96 (range 40.42–81.93), below the ~72 benchmark for ordinary spontaneous speech — i.e., the show is *less* varied than normal conversation. Diversity does not drift over the season: neither MTLD nor TTR correlates with episode number (MTLD: r = −0.11, p = .52; TTR: r = 0.05, p = .78). Episode-to-episode bumps in Figure 5 track episode length and content (recaps, finales), not a trend.
+Per-episode MTLD averages 59.96 (range 40.42–81.93), below the ~72 benchmark for ordinary spontaneous speech. I.e., the show is *less* varied than normal conversation. Diversity does not drift over the season: neither MTLD nor TTR correlates with episode number (MTLD: r = −0.11, p = .52; TTR: r = 0.05, p = .78). Episode-to-episode bumps in Figure 5 track episode length and content (recaps, finales), not a trend.
 
 **Figure 5.** Lexical diversity across episodes.  
 `[output/figures/03_lexical_diversity_per_episode.png]`
 
 ### 4.5 Filler and hedge words
 
-Filler and hedge words are pervasive (Figure 6). The most common are *like* (28.2 per 1,000 words), *know* (13.0), and *yeah* (12.5). *Like* alone is more than twice as frequent as any other filler and is the third most common word in the entire corpus. Across the 24 tracked filler/hedge words, these account for 9.3% of all tokens — roughly one word in eleven — doing social and discourse-organising work rather than conveying new information.
+Filler and hedge words are pervasive (Figure 6). The most common are *like* (28.2 per 1,000 words), *know* (13.0), and *yeah* (12.5). *Like* alone is more than twice as frequent as any other filler and is the third most common word in the entire corpus. Across the 24 tracked filler/hedge words, these account for 9.3% of all tokens, roughly one word in eleven, doing social and discourse-organising work rather than conveying new information.
 
 **Figure 6.** Filler and hedge word usage.  
 `[output/figures/06_filler_words.png]`
 
 ### 4.6 What kinds of words: parts of speech
 
-Verbs are the largest word class (24.5%), then nouns (17.9%), prepositions (15.4%), and pronouns (13.6%). Crucially, **adjectives are only 8.4%** of words (adverbs another 8.5%). Adjectives are the main carriers of description, so their scarcity — combined with heavy pronoun and verb use — marks a discourse built on relationships and actions ("I want to", "you said", "we talked") rather than vivid description.
+Verbs are the largest word class (24.5%), then nouns (17.9%), prepositions (15.4%), and pronouns (13.6%). Crucially, **adjectives are only 8.4%** of words (adverbs another 8.5%). Adjectives are the main carriers of description, so their scarcity, combined with heavy pronoun and verb use, marks a discourse built on relationships and actions ("I want to", "you said", "we talked") rather than vivid description.
 
 **Figure 7.** Part-of-speech distribution.  
 `[output/figures/07_pos_distribution.png]`
@@ -122,7 +122,7 @@ Sentiment is uniformly positive: every one of the 38 episodes scores above zero 
 **Figure 8.** Sentiment across episodes.  
 `[output/figures/08_sentiment_per_episode.png]`
 
-Removing function words, the most frequent content words are *feel, love, good, think, want, going,* and *get* (Figure 9) — an emotion- and intention-focused vocabulary that fits the show's theme of romantic connection.
+Removing function words, the most frequent content words are *feel, love, good, think, want, going,* and *get* (Figure 9). An emotion- and intention-focused vocabulary that fits the show's theme of romantic connection.
 
 **Figure 9.** Word cloud of content words (function words removed).  
 `[output/figures/05_wordcloud_no_stopwords.png]`
@@ -138,11 +138,11 @@ A related way to see the show's small vocabulary is to track how quickly *new* w
 
 ## 5. Discussion
 
-Every measure points the same way: *Love Island USA* Season 4 runs on a small, familiar, repeated vocabulary. The headline numbers for a general reader are the two new ones. **You can follow 95% of the show on about 1,250 word families** — well under the ~3,000 needed for everyday English — and the dialogue reads at roughly a **third- to fifth-grade level**, with 98% of its words among the most familiar in English. This is a genuinely low-demand form of English.
+Every measure points the same way: *Love Island USA* Season 4 runs on a small, familiar, repeated vocabulary. The headline numbers for a general reader are the two new ones. **You can follow 95% of the show on about 1,250 word families.** Well under the ~3,000 needed for everyday English, and the dialogue reads at roughly a **third- to fifth-grade level**, with 98% of its words among the most familiar in English. This is a genuinely low-demand form of English.
 
-That is unsurprising for spontaneous speech, which is always more restricted than writing, but the *degree* is striking, and the near-perfect Zipfian fit (R² = 0.98) shows the pattern is highly regular rather than a quirk of a few episodes. The texture of the talk explains the simplicity: it is emotional and personal (uniformly positive, highly subjective) but expressed through verbs, pronouns, intensifiers (*really*, *so*), and a thin band of evaluative adjectives (*good*, *amazing*, *crazy*) rather than descriptive variety. Discourse markers like *like* and *know* form a structural layer that organises talk and signals informality more than it adds content. This matches Biber et al.'s (1999) "involved production" — language under real-time pressure that foregrounds stance and connection over elaboration.
+That is unsurprising for spontaneous speech, which is always more restricted than writing, but the *degree* is striking, and the near-perfect Zipfian fit (R² = 0.98) shows the pattern is highly regular rather than a quirk of a few episodes. The texture of the talk explains the simplicity: it is emotional and personal (uniformly positive, highly subjective) but expressed through verbs, pronouns, intensifiers (*really*, *so*), and a thin band of evaluative adjectives (*good*, *amazing*, *crazy*) rather than descriptive variety. Discourse markers like *like* and *know* form a structural layer that organises talk and signals informality more than it adds content. This matches Biber et al.'s (1999) "involved production", language under real-time pressure that foregrounds stance and connection over elaboration.
 
-The implications cut two ways. For accessibility, the show is easy: learners of English, younger viewers, and the broad public can follow it almost completely, which is part of its mass appeal. For language exposure, that same narrowness means heavy viewing offers a repetitive linguistic diet — a useful point for anyone weighing such content as "language input." A natural next step is a controlled comparison with scripted television of similar theme to isolate how much scripting widens vocabulary.
+The implications cut two ways. For accessibility, the show is easy: learners of English, younger viewers, and the broad public can follow it almost completely, which is part of its mass appeal. For language exposure, that same narrowness means heavy viewing offers a repetitive linguistic diet. A useful point for anyone weighing such content as "language input." A natural next step is a controlled comparison with scripted television of similar theme to isolate how much scripting widens vocabulary.
 
 ---
 
@@ -157,7 +157,7 @@ The implications cut two ways. For accessibility, the show is easy: learners of 
 
 ## 7. Conclusion
 
-*Love Island USA* Season 4 is, linguistically, a small and welcoming world. Across 224,815 words we find a tiny high-frequency core (top 100 words = 61% of speech), low lexical diversity (MTLD 59.96), and a strongly positive, subjective tone carried by verbs rather than description. Most concretely: a viewer needs only about **1,250 common word families to understand 95%** of the show, and the dialogue sits at roughly a **third- to fifth-grade reading level**, with 98% of its words among the 3,000 most familiar in English. Whether that reflects the nature of unscripted emotional speech, the cast, or the demands of being on camera is a question for future work — but the language of the villa, for all its drama, asks very little of its audience.
+*Love Island USA* Season 4 is, linguistically, a small and welcoming world. Across 224,815 words we find a tiny high-frequency core (top 100 words = 61% of speech), low lexical diversity (MTLD 59.96), and a strongly positive, subjective tone carried by verbs rather than description. Most concretely: a viewer needs only about **1,250 common word families to understand 95%** of the show, and the dialogue sits at roughly a **third- to fifth-grade reading level**, with 98% of its words among the 3,000 most familiar in English. Whether that reflects the nature of unscripted emotional speech, the cast, or the demands of being on camera is a question for future work, but the language of the villa, for all its drama, asks very little of its audience.
 
 ---
 
@@ -189,7 +189,7 @@ Webb, S., & Rodgers, M. P. H. (2009). The vocabulary demands of television progr
 
 ---
 
-## Appendix A — Vocabulary Load and Reading Level
+## Appendix A: Vocabulary Load and Reading Level
 
 *Vocabulary load: word families needed for each coverage level (lemmatised); raw word types shown for comparison.*
 
@@ -213,7 +213,7 @@ Webb, S., & Rodgers, M. P. H. (2009). The vocabulary demands of television progr
 | % words outside 3,000 familiar list | 2.1% | 97.9% of words are highly familiar |
 | Per-episode FK grade range | 2.3–3.7 | consistently easy |
 
-## Appendix B — Corpus Statistics by Episode
+## Appendix B: Corpus Statistics by Episode
 
 *Tokens = post-cleaning token count; Types = unique word types.*
 
@@ -239,7 +239,7 @@ Webb, S., & Rodgers, M. P. H. (2009). The vocabulary demands of television progr
 | 18 | 5249 | 910 | 0.173 | 76.77 |  | 37 | 6034 | 1068 | 0.177 | 67.58 |
 | 19 | 5176 | 996 | 0.192 | 71.49 |  | 38 | 11366 | 1415 | 0.125 | 69.80 |
 
-## Appendix C — Top 100 Words
+## Appendix C: Top 100 Words
 
 *Single-character tokens (e.g., I, a) excluded by preprocessing. Note the appearance of contestant first names (Isaiah, Timmy, Sydney, Deb), informal markers (bro), and tokeniser fragments of contractions (na ← gonna/wanna, gon ← gonna) within the high-frequency band.*
 
@@ -296,7 +296,7 @@ Webb, S., & Rodgers, M. P. H. (2009). The vocabulary demands of television progr
 | 49 | right | 817 | 0.363 | 99 | well | 382 | 0.17 |
 | 50 | no | 815 | 0.363 | 100 | make | 381 | 0.169 |
 
-## Appendix D — Sentiment Scores by Episode
+## Appendix D: Sentiment Scores by Episode
 
 *TextBlob polarity (−1 to +1) and subjectivity (0 to 1), computed over full episode text.*
 
@@ -322,21 +322,21 @@ Webb, S., & Rodgers, M. P. H. (2009). The vocabulary demands of television progr
 | 18 | 0.0888 | 0.5511 | 37 | 0.278 | 0.5931 |
 | 19 | 0.1888 | 0.5463 | 38 | 0.2004 | 0.5504 |
 
-## Appendix E — Statistical Tests
+## Appendix E: Statistical Tests
 
 *Trend correlations are across the 38 episodes (n = 38); Zipf regression is over all ranked word types. Full filler-word counts available on request.*
 
 | Test | Statistic | p-value |
 |---|---|---|
-| Top 10 / 50 / 100 / 1,000 words — % of all tokens | 22.7% / 48.7% / 61.0% / 91.1% | — |
+| Top 10 / 50 / 100 / 1,000 words, % of all tokens | 22.7% / 48.7% / 61.0% / 91.1% | n/a |
 | Zipf regression slope (log freq ~ log rank) | −1.453 | < .001 |
-| Zipf regression R² | 0.981 | — |
-| MTLD vs. episode — Pearson r | −0.107 | .521 |
-| MTLD vs. episode — Spearman ρ | −0.028 | .868 |
-| TTR vs. episode — Pearson r | 0.048 | .775 |
-| TTR vs. episode — Spearman ρ | 0.109 | .514 |
-| Sentiment polarity vs. episode — Pearson r | −0.129 | .441 |
-| Sentiment polarity vs. episode — Spearman ρ | −0.149 | .371 |
+| Zipf regression R² | 0.981 | n/a |
+| MTLD vs. episode, Pearson r | −0.107 | .521 |
+| MTLD vs. episode, Spearman ρ | −0.028 | .868 |
+| TTR vs. episode, Pearson r | 0.048 | .775 |
+| TTR vs. episode, Spearman ρ | 0.109 | .514 |
+| Sentiment polarity vs. episode, Pearson r | −0.129 | .441 |
+| Sentiment polarity vs. episode, Spearman ρ | −0.149 | .371 |
 
 ---
 
