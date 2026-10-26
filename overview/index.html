@@ -3,55 +3,57 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>How simple is reality TV English?: a corpus study of Love Island USA S4</title>
-<meta name="description" content="The 100 most common words make up 61% of all speech. About 1,250 word families cover 95% of the show, against roughly 3,000 for everyday English. It reads at a 3rd–5th grade level." />
-<meta name="theme-color" content="#EDEDE7" />
+<title>How simple is reality TV English? A corpus study of Love Island USA season 4</title>
+<meta name="description" content="38 episodes, 224,815 words. The 100 most common words are 61% of all speech, about 1,250 word families cover 95% of the show, and Flesch-Kincaid puts the dialogue at grade 2.8." />
+<meta name="theme-color" content="#EEEDE6" />
 <meta property="og:title" content="How simple is reality TV English?" />
-<meta property="og:description" content="A full-season corpus study: Zipf at R² = 0.98, 95% coverage from 1,250 word families, and a 3rd–5th grade reading level." />
+<meta property="og:description" content="A full-season corpus study: 95% coverage from 1,250 word families, Zipf fit R² = 0.98, Flesch-Kincaid grade 2.8." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lyhjeremy.github.io/love-island-lexical-analysis/overview/" />
+<link href="" rel="stylesheet" />
 <style>
-@font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-400.woff2")format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-600.woff2")format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-400.woff2")format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-600.woff2")format("woff2");font-weight:600;font-display:swap}
-@font-face{font-family:"IBM Plex Mono";src:url("../fonts/IBMPlexMono-400.woff2")format("woff2");font-weight:400;font-display:swap}
-
   :root {
-    --paper: #EDEDE7;
-    --card: #F5F5F0;
-    --plate: #F5F5F0;
-    --ink: #1C1E1B;
-    --ink2: #3d3d55;
-    --muted: #52564E;
-    --rule: #C6C7BF;
-    --accent: #8C3A1E;
-    --accent2: #2C5852;
-    --link: #8C3A1E;
-    --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
-    --sans: 'Source Sans 3', -apple-system, system-ui, sans-serif;
-    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
-    --shadow: 0 1px 2px rgba(26,26,46,.05), 0 10px 34px rgba(26,26,46,.07);
+    --paper: #EEEDE6;
+    --card: #F6F5EF;
+    --plate: #F6F5EF;
+    --ink: #1B1E24;
+    --ink2: #4F5560;
+    --muted: #4F5560;
+    --rule: #C8C9C2;
+    --accent: #9E3A2C;
+    --accent2: #284B73;
+    --link: #9E3A2C;
+    --serif: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+    --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+    --edge: #757A80;
     --spine:  92px;
     --col:    min(100% - 2.6rem, 62rem);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #14141f;
-      --card: #1c1c2a;
-      --plate: #f7f4ec;
-      --ink: #F2EFE6;
-      --ink2: #C9C4B6;
-      --muted: #918B7D;
-      --rule: #33313f;
-      --accent: #FB7185;
-      --accent2: #A78BFA;
-      --link: #22D3EE;
-      --shadow: 0 1px 2px rgba(0,0,0,.32), 0 10px 34px rgba(0,0,0,.4);
+      --paper: #181A1F;
+      --card: #21242A;
+      --plate: #21242A;
+      --ink: #E5E6E2;
+      --ink2: #A5AAB3;
+      --muted: #A5AAB3;
+      --rule: #3A3E45;
+      --accent: #D88E80;
+      --accent2: #86A9D6;
+      --link: #D88E80;
+      --edge: #6B7079;
     }
   }
 
-  * { box-sizing: border-box; }
+  @font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-400.woff2")format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:"Source Serif 4";src:url("../fonts/SourceSerif4-600.woff2")format("woff2");font-weight:600;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-400.woff2")format("woff2");font-weight:400;font-display:swap}
+  @font-face{font-family:"IBM Plex Sans";src:url("../fonts/IBMPlexSans-600.woff2")format("woff2");font-weight:600;font-display:swap}
+  @font-face{font-family:"IBM Plex Mono";src:url("../fonts/IBMPlexMono-400.woff2")format("woff2");font-weight:400;font-display:swap}
+
+  * { box-sizing: border-box; border-radius: 0; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
@@ -210,54 +212,104 @@
     html { scroll-behavior: auto; }
     .btn { }
   }
+  @font-face{font-family:"Newsreader";src:url("../fonts/Newsreader-600.woff2")format("woff2");font-weight:600;font-style:normal;font-display:swap}
+  @font-face{font-family:"Newsreader";src:url("../fonts/Newsreader-400i.woff2")format("woff2");font-weight:400;font-style:italic;font-display:swap}
 
+  .btn:hover { transform: none; background: var(--accent); border-color: var(--accent); color: var(--paper); }
+  .pull { border: 1px solid var(--edge); border-left: 1px solid var(--edge); background: transparent; }
+  .term { background: var(--card); color: var(--ink); border: 1px solid var(--rule); }
+  .term .c { color: var(--muted); } .term .g { color: var(--accent2); } .term .y { color: var(--accent); }
+  .logo, .hero h1, h2, .claim .n, .bignum { font-family: var(--display); }
+
+  /* Language: a well-set book. Newsreader display, italic glosses, notes in the margin. */
+  .logo { font-weight: 600; font-size: 23px; letter-spacing: 0; }
+  .hero h1 { font-weight: 600; font-size: clamp(42px, 6.6vw, 80px); letter-spacing: -.015em; line-height: 1.02; max-width: 16ch; }
+  .kicker { font-family: var(--display); font-style: italic; font-weight: 400; font-size: clamp(20px, 2.3vw, 25px); color: var(--accent2); }
+  h2 { font-weight: 600; letter-spacing: -.01em; font-size: clamp(29px, 3.9vw, 40px); }
+  .claim, .claim:first-child, .claim:nth-child(2) { border-top: 1px solid var(--rule); }
+  .claim .n { font-weight: 600; font-size: 44px; letter-spacing: -.01em; color: var(--accent2); }
+  .bignum { font-weight: 600; color: var(--accent2); }
+  .eyebrow { font-family: var(--display); font-style: italic; text-transform: none; letter-spacing: 0;
+             font-size: 18px; font-weight: 400; color: var(--accent); }
+  :root { --spine: 0px; }
+  .route::before, .stop::before { display: none; }
+  .stop { padding-left: 0; }
+  @media (min-width: 980px) {
+    .stop { display: grid; grid-template-columns: 11rem minmax(0, 1fr); column-gap: 40px; }
+    .stop > * { grid-column: 2; }
+    .stop > .eyebrow { grid-column: 1; grid-row: 1 / span 2; text-align: right; padding-top: 14px;
+                       border-top: 1px solid var(--rule); }
+  }
+
+
+  /* Signature: one line of dialogue, each word glossed with its frequency rank in the corpus. */
+  .gloss { margin: 46px 0 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 22px 0 18px; }
+  .gloss-line { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: flex-end; }
+  .gw { display: inline-flex; flex-direction: column; align-items: flex-start; }
+  .gw .w { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.05; color: var(--ink); }
+  .gw .r { font-family: var(--mono); font-size: 13px; color: var(--ink2); margin-top: 4px; border-top: 1px solid var(--rule); padding-top: 3px; min-width: 100%; }
+  .gw.out .w { font-family: var(--display); font-style: italic; font-weight: 400; color: var(--accent); }
+  .gw.out .r { color: var(--accent); border-top-color: var(--accent); }
+  .gloss-cap { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 14px 0 0; line-height: 1.5; max-width: 62ch; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="masthead">
-    <div class="logo"><span class="dot" aria-hidden="true"></span>Love Island Lexical Analysis</div>
-    <div class="tagline">a full season, as a corpus</div>
+    <div class="logo">Love Island lexical analysis</div>
+    <div class="tagline">a full season, read as a corpus</div>
   </header>
 
   <section class="hero">
-    <p class="kicker">People say reality TV is linguistically simple.</p>
-    <h1>It is, and you can put a number on exactly how simple.</h1>
+    <p class="kicker">Love Island USA, season 4, 38 episodes</p>
+    <h1>About 1,250 word families cover 95% of what anyone says on the show.</h1>
 
     <p class="hero-sub">
-      A corpus study of every episode of <em>Love Island USA</em> season 4. The
-      <strong>100 most common words are 61%</strong> of everything anyone says.
-      Word frequency is near-perfectly Zipfian at <strong>R² = 0.98</strong>. And
-      the practically useful number: knowing about <strong>1,250 word
-      families</strong> gets you <strong>95%</strong> of the show, against roughly
-      <strong>3,000</strong> for everyday English. For a language learner, that
-      gap is the whole point.
+      I scraped the subtitle transcripts for all 38 episodes, 224,815 words in
+      total, and measured how much English a viewer needs to follow them. The 100
+      most common words make up 61% of the speech. Published estimates for everyday
+      English put 95% coverage at about 3,000 word families, so this show needs well
+      under half that.
     </p>
 
     <div class="cta-row">
       <a class="btn btn-primary" href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Read the paper (PDF)</a>
-      <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">or the code and corpus</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">Code and corpus on GitHub</a>
+    </div>
+
+    <div class="gloss" aria-label="A line from episode 1 with the corpus frequency rank of each word">
+      <div class="gloss-line">
+        <span class="gw"><span class="w">The</span><span class="r">5</span></span>
+        <span class="gw"><span class="w">perfect</span><span class="r">416</span></span>
+        <span class="gw"><span class="w">man</span><span class="r">80</span></span>
+        <span class="gw"><span class="w">is</span><span class="r">2</span></span>
+        <span class="gw"><span class="w">tall,</span><span class="r">1,104</span></span>
+        <span class="gw out"><span class="w">tan,</span><span class="r">1,454</span></span>
+        <span class="gw out"><span class="w">muscular.</span><span class="r">3,525</span></span>
+      </div>
+      <p class="gloss-cap">A line from episode 1. Under each word is its word-family rank in the
+        season's corpus ("is" counts as "be"). A viewer who knows the top 1,250 families
+        understands the first five words; the two in italics fall outside. Ranks computed
+        with the lemmatizer from <code>scripts/analyze_vocab_level.py</code>.</p>
     </div>
 
     <div class="claims">
       <div class="claim">
         <div class="n">61%</div>
-        <p>of all speech comes from just the 100 most common words.</p>
+        <p>of all speech is the 100 most common words. The top 10 alone are 22.7%.</p>
       </div>
       <div class="claim">
-        <div class="n">1,250</div>
-        <p>word families for 95% coverage. Everyday English needs about 3,000 for
-           the same.</p>
+        <div class="n">1,249</div>
+        <p>word families reach 95% coverage, and 2,554 reach 98%.</p>
       </div>
       <div class="claim">
-        <div class="n">3rd–5th</div>
-        <p>grade reading level, with 97.9% of words among the 3,000 most familiar
-           in English.</p>
+        <div class="n">2.8</div>
+        <p>Flesch-Kincaid grade level, with a Flesch Reading Ease of 90.2. 97.9% of
+           words are on the Dale-Chall list of 3,000 familiar words.</p>
       </div>
       <div class="claim">
         <div class="n">R² = 0.98</div>
-        <p>fit to Zipf's law. The vocabulary is not unusual in shape, only in how
-           little of it gets used.</p>
+        <p>for the Zipf fit of log frequency on log rank, slope −1.45.</p>
       </div>
     </div>
   </section>
@@ -267,169 +319,181 @@
 <div class="route">
 
   <section class="stop">
-    <p class="eyebrow">Start · why bother</p>
-    <h2>"Simple" is a compliment if you are learning the language</h2>
+    <p class="eyebrow">The question</p>
+    <h2>How much English do you need to follow it?</h2>
     <p>
-      The obvious framing is mockery, and it is the least interesting one. The
-      genuinely useful question is the one a language learner asks: <em>how much
-      English do I need before I can follow this?</em> Native-speaker television is
-      the standard advice for intermediate learners and most of it is far too hard.
+      Making fun of reality TV dialogue is easy and tells you nothing. The useful
+      question is a language learner's one: how many words do I need before I can
+      follow this? Native-speaker television is standard advice for intermediate
+      learners, and most of it is too hard for them.
     </p>
     <p>
-      A corpus answers that directly. Build the vocabulary coverage curve and the
-      answer comes out as a number of words rather than an opinion.
+      A corpus answers that with a number. Rank every word family by frequency, add
+      up their share of the speech, and read off how many families it takes to reach
+      95% coverage.
     </p>
   </section>
 
   <section class="stop stop--key">
-    <p class="eyebrow">↓ the useful number</p>
-    <h2>1,250 words gets you 95% of it</h2>
+    <p class="eyebrow">Vocabulary load</p>
+    <h2>1,250 families get you to 95%</h2>
 
-    <div class="bignum">1,250</div>
-    <p class="bignum-note">word families for 95% coverage. About 2,550 gets you to 98%.</p>
+    <div class="bignum">1,249</div>
+    <p class="bignum-note">word families for 95% coverage; 592 for 90%, 2,554 for 98%.</p>
 
     <p>
-      Standard estimates put everyday English at roughly <strong>3,000</strong>
-      word families for the same 95% threshold. This show needs
-      <strong>well under half</strong> of that. For someone at an intermediate
-      level, that difference is the difference between following along and
-      constantly reaching for a dictionary.
+      The benchmark I compare against is from the published literature: about
+      3,000 word families for 95% coverage of everyday spoken English (Adolphs and
+      Schmitt 2003; Nation 2006), and about the same for TV dialogue in general
+      (Webb and Rodgers 2009). Even 98% of this show sits below that 3,000 mark.
     </p>
     <figure>
       <div class="plate">
         <img width="4288" height="2311" src="../V4/figures/11_vocabulary_coverage.png" fetchpriority="high"
-          alt="Vocabulary coverage curve showing the percentage of all speech covered as more word families are known, crossing 95 percent at about 1,250 families." />
+          alt="Coverage curve: share of all speech understood as more word families are known, passing 95 percent at about 1,250 families and 98 percent at about 2,550." />
       </div>
-      <figcaption>The coverage curve. The 95% line is the one that matters.</figcaption>
-    </figure>
-    <figure>
-      <div class="plate">
-        <img width="4312" height="1991" src="../V4/figures/12_reading_level.png" loading="lazy"
-          alt="Reading-level scores for the corpus placing it around a third to fifth grade level across several readability measures." />
-      </div>
-      <figcaption>Reading level across several standard measures.</figcaption>
+      <figcaption>Vocabulary coverage curve, word families on the x-axis. Produced by <code>scripts/analyze_vocab_level.py</code>.</figcaption>
     </figure>
   </section>
 
   <section class="stop">
-    <p class="eyebrow">↓ the distribution</p>
-    <h2>Textbook Zipf, unusually steep in effect</h2>
+    <p class="eyebrow">Reading level</p>
+    <h2>Grade 2.8 by Flesch-Kincaid, higher by other formulas</h2>
     <p>
-      Word frequency follows Zipf's law almost exactly, at <strong>R² = 0.98</strong>.
-      That in itself is unremarkable, nearly all natural language does. What is
-      notable is the consequence here: the top 100 words carry
-      <strong>61%</strong> of all speech, so the long tail is doing very little
-      work.
+      Flesch-Kincaid puts the whole corpus at grade 2.8, and every episode falls
+      between 2.3 and 3.7. textstat's consensus estimate is grade 3.0. The formulas
+      that weight syllables or unfamiliar words read higher: SMOG gives 6.9 and the
+      approximate Dale-Chall grade is 7.3. Only 2.1% of the words spoken fall
+      outside the Dale-Chall list of 3,000 familiar words.
+    </p>
+    <figure>
+      <div class="plate">
+        <img width="4312" height="1991" src="../V4/figures/12_reading_level.png" loading="lazy"
+          alt="Flesch-Kincaid grade of the show, about 2.8, plotted against common reading-level benchmarks." />
+      </div>
+      <figcaption>Flesch-Kincaid grade against common benchmarks.</figcaption>
+    </figure>
+  </section>
+
+  <section class="stop">
+    <p class="eyebrow">The distribution</p>
+    <h2>Textbook Zipf, with a heavy head</h2>
+    <p>
+      Word frequency follows Zipf's law closely: regressing log frequency on log
+      rank gives R² = <strong>0.981</strong> and a slope of −1.45. Most natural
+      language does this. What stands out is how much the head carries. The top 10
+      words are 22.7% of all speech, the top 100 are <strong>61.0%</strong>, and the
+      top 1,000 are 91.1%. "You", "to" and "like" are the three most common words,
+      and "like" alone is 2.8% of everything said.
     </p>
     <div class="panels">
       <figure>
         <div class="plate">
           <img width="4712" height="3524" src="../V4/figures/02_word_frequency_distribution.png" loading="lazy"
-            alt="Log-log plot of word rank against frequency forming a near-straight line, the signature of a Zipfian distribution." />
+            alt="Log-log plot of word rank against frequency forming a near-straight line, the signature of a Zipf distribution." />
         </div>
-        <figcaption><strong>Zipf</strong>: a straight line on log-log axes.</figcaption>
+        <figcaption>Rank against frequency on log-log axes.</figcaption>
       </figure>
       <figure>
         <div class="plate">
           <img width="4712" height="3912" src="../V4/figures/01_top50_words.png" loading="lazy"
-            alt="Bar chart of the fifty most frequent words in the corpus, dominated by function words and a few show-specific terms." />
+            alt="Bar chart of the fifty most frequent words, led by you, to, like and the." />
         </div>
-        <figcaption><strong>Top 50</strong>: function words, and a few the show made its own.</figcaption>
+        <figcaption>The 50 most frequent words.</figcaption>
       </figure>
     </div>
     <figure>
       <div class="plate">
         <img width="5841" height="3112" src="../V4/figures/05_wordcloud_no_stopwords.png" loading="lazy"
-          alt="Word cloud of the most frequent content words once stopwords are removed, with relationship and feeling vocabulary dominating." />
+          alt="Word cloud of the most frequent content words once stopwords are removed." />
       </div>
-      <figcaption>With stopwords removed, what the season is actually about.</figcaption>
+      <figcaption>Most frequent content words, stopwords removed.</figcaption>
     </figure>
   </section>
 
   <section class="stop">
-    <p class="eyebrow">↓ texture</p>
-    <h2>Flat, positive, and full of filler</h2>
+    <p class="eyebrow">Texture</p>
+    <h2>Flat across the season, positive, heavy on filler</h2>
     <p>
-      Lexical diversity sits at a mean <strong>MTLD of 59.96</strong> with
-      <strong>no trend across the season</strong>. Episode 1 and the finale are
-      linguistically indistinguishable. Sentiment is uniformly positive and highly
-      subjective, and adjectives make up only <strong>8.4%</strong> of speech,
-      which is low for such emotionally saturated content.
+      Lexical diversity averages an <strong>MTLD of 59.96</strong> per episode and
+      has no trend across the season (Spearman ρ = −0.03, p = 0.87). Sentiment
+      polarity from TextBlob stays positive in every episode, also with no trend.
+      Adjectives are only <strong>8.4%</strong> of words, against 24.5% verbs and
+      13.6% pronouns.
     </p>
     <p>
-      Filler words are their own chart, and they are not incidental. This is
-      unscripted speech, which is exactly why it is easy: unscripted speakers reuse
-      a small stock of words and lean on filler to buy time.
+      The filler words are frequent enough to chart on their own: "like" appears 28
+      times per 1,000 words, "know" 13, "yeah" 12 and "just" 12. This is unscripted
+      speech, and unscripted speakers reuse a small stock of words.
     </p>
     <div class="panels">
       <figure>
         <div class="plate">
           <img width="5469" height="3916" src="../V4/figures/03_lexical_diversity_per_episode.png" loading="lazy"
-            alt="Lexical diversity measured per episode across the season, showing a flat line with no upward or downward trend." />
+            alt="Lexical diversity per episode across the season, a flat line with no upward or downward trend." />
         </div>
-        <figcaption><strong>Diversity per episode</strong>: no trend at all.</figcaption>
+        <figcaption>Diversity per episode: no trend.</figcaption>
       </figure>
       <figure>
         <div class="plate">
           <img width="4712" height="2312" src="../V4/figures/06_filler_words.png" loading="lazy"
-            alt="Frequency of common filler words across the corpus, with like and just among the most frequent." />
+            alt="Filler words per 1,000 words, led by like at about 28, then know, yeah and just at about 12 each." />
         </div>
-        <figcaption><strong>Filler</strong>: the signature of unscripted speech.</figcaption>
+        <figcaption>Filler words per 1,000 words.</figcaption>
       </figure>
       <figure>
         <div class="plate">
           <img width="5512" height="3111" src="../V4/figures/08_sentiment_per_episode.png" loading="lazy"
-            alt="Sentiment polarity and subjectivity per episode, staying positive and highly subjective throughout the season." />
+            alt="Sentiment polarity and subjectivity per episode, positive and highly subjective throughout the season." />
         </div>
-        <figcaption><strong>Sentiment</strong>: positive throughout, and very subjective.</figcaption>
+        <figcaption>Sentiment polarity and subjectivity per episode.</figcaption>
       </figure>
       <figure>
         <div class="plate">
           <img width="3912" height="2312" src="../V4/figures/07_pos_distribution.png" loading="lazy"
-            alt="Part-of-speech distribution across the corpus, with adjectives making up about 8.4 percent." />
+            alt="Part-of-speech shares: verbs 24.5 percent, nouns 17.9, prepositions 15.4, pronouns 13.6, adjectives 8.4." />
         </div>
-        <figcaption><strong>Parts of speech</strong>: only 8.4% adjectives.</figcaption>
+        <figcaption>Part-of-speech shares (NLTK tagger).</figcaption>
       </figure>
     </div>
   </section>
 
   <section class="stop stop--warn">
-    <p class="eyebrow">↓ what this cannot tell you</p>
-    <h2>One season, and transcripts are not speech</h2>
+    <p class="eyebrow">Limitations</p>
+    <h2>One season, read from subtitles</h2>
     <p>
-      This is a single season of a single show, so nothing here generalises to
-      "reality TV" as a genre without more seasons to check against.
+      This is one season of one show. Nothing here generalizes to reality TV as a
+      genre without more seasons to compare.
     </p>
     <p>
-      More importantly, transcripts flatten things that matter. Overlapping speech,
-      prosody, and the pace of delivery are all invisible to a word-frequency
-      analysis, and all three affect how hard something actually is to follow. A
-      show can be lexically easy and still hard to parse at speed. The coverage
-      number is a floor on difficulty, not the whole of it.
+      Subtitles drop things that make speech hard to follow: overlapping talk,
+      accents, and speed of delivery. A show can be lexically easy and still hard to
+      parse in real time, so the coverage number is a lower bound on difficulty.
     </p>
     <p>
-      Reading-level measures were built for written prose and applied here to
-      conversational speech. They are reported because they are comparable across
-      studies, not because a grade level is a natural unit for dialogue.
+      Word families are approximated by WordNet lemmatization, which merges
+      inflections ("making" to "make") but not derived forms. Readability formulas
+      were built for written prose and disagree on this dialogue, from grade 3 to
+      about 7.
     </p>
   </section>
 
   <section class="stop stop--end">
-    <p class="eyebrow">Finish · how it was built</p>
+    <p class="eyebrow">Method</p>
     <h2>Where the numbers come from</h2>
     <p>
       The repository ships the cleaned corpus, one <code>.txt</code> per episode
-      plus a combined CSV, so the analysis is checkable rather than merely
-      described. The paper is written in Markdown, converted to LaTeX by a script
-      in the repo, and compiled to PDF.
+      plus a combined CSV, so every number can be checked. The paper is written in
+      Markdown, converted to LaTeX by a script in the repo, and compiled to PDF.
     </p>
     <dl class="specs">
-      <div class="spec"><dt>Corpus</dt><dd>Every episode of <em>Love Island USA</em> season 4, scraped and cleaned, one row per episode</dd></div>
-      <div class="spec"><dt>Coverage</dt><dd>Word-family coverage curve against a standard frequency list</dd></div>
-      <div class="spec"><dt>Diversity</dt><dd>MTLD, which is stable across differing text lengths in a way type-token ratio is not</dd></div>
-      <div class="spec"><dt>Built with</dt><dd>Python, pandas, nltk, textblob, textstat, wordcloud, matplotlib</dd></div>
-      <div class="spec"><dt>Figures</dt><dd>Twelve, at 400 DPI, regenerated by two scripts writing to <code>LI_OUTPUT_DIR</code></dd></div>
-      <div class="spec"><dt>Related</dt><dd>The same lens on pop lyrics in <a href="https://lyhjeremy.github.io/lyrics-complexity-over-time/">Are song lyrics getting simpler?</a>, and turned into a tool anyone can point at a book in the <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a></dd></div>
+      <div class="spec"><dt>Corpus</dt><dd>Subtitle transcripts of all 38 episodes of <em>Love Island USA</em> season 4 (2022), scraped with Selenium; 224,815 tokens, 7,856 word types</dd></div>
+      <div class="spec"><dt>Coverage</dt><dd>Tokens lemmatized with WordNet to approximate word families, ranked by frequency, cumulative share read off at 80, 90, 95 and 98%</dd></div>
+      <div class="spec"><dt>Diversity</dt><dd>TTR, root TTR and MTLD per episode; MTLD because it holds steady across episode lengths</dd></div>
+      <div class="spec"><dt>Readability</dt><dd>textstat: Flesch-Kincaid, Flesch Reading Ease, SMOG, Dale-Chall</dd></div>
+      <div class="spec"><dt>Other</dt><dd>NLTK part-of-speech tags, TextBlob sentiment, Pearson and Spearman tests for trends across the season</dd></div>
+      <div class="spec"><dt>Built with</dt><dd>Python, pandas, NLTK, TextBlob, textstat, SciPy, matplotlib, seaborn, wordcloud</dd></div>
+      <div class="spec"><dt>Related</dt><dd>The same measures on pop lyrics in <a href="https://lyhjeremy.github.io/lyrics-complexity-over-time/">Are song lyrics getting simpler?</a>, and as a browser tool for any book in the <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a></dd></div>
     </dl>
   </section>
 
@@ -438,16 +502,16 @@
 
 <div class="wrap">
   <section class="close">
-    <h2>1,250 words, and you can follow the whole season</h2>
+    <h2>1,250 word families, and you can follow the season</h2>
     <div class="cta-row">
       <a class="btn btn-primary" href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Read the paper (PDF)</a>
-      <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">or the code and corpus</a>
+      <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">Code and corpus on GitHub</a>
     </div>
   </section>
 
   <footer>
     <p>
-      Love Island Lexical Analysis ·
+      Love Island lexical analysis ·
       <a href="../">Summary</a> ·
       <a href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Paper</a> ·
       <a href="https://github.com/lyhjeremy/love-island-lexical-analysis">Source</a> ·
