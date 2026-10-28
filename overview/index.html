@@ -243,14 +243,56 @@
 
 
   /* Signature: one line of dialogue, each word glossed with its frequency rank in the corpus. */
-  .gloss { margin: 46px 0 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 22px 0 18px; }
+  .gloss { margin: 40px 0 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 22px 0 18px; }
   .gloss-line { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: flex-end; }
   .gw { display: inline-flex; flex-direction: column; align-items: flex-start; }
   .gw .w { font-family: var(--display); font-weight: 600; font-size: clamp(28px, 4.4vw, 44px); line-height: 1.05; color: var(--ink); }
   .gw .r { font-family: var(--mono); font-size: 13px; color: var(--ink2); margin-top: 4px; border-top: 1px solid var(--rule); padding-top: 3px; min-width: 100%; }
-  .gw.out .w { font-family: var(--display); font-style: italic; font-weight: 400; color: var(--accent); }
+  .gw.out .w { font-style: italic; font-weight: 400; color: var(--accent); }
   .gw.out .r { color: var(--accent); border-top-color: var(--accent); }
-  .gloss-cap { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 14px 0 0; line-height: 1.5; max-width: 62ch; }
+  .gloss-cap, .fig-cap { font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 14px 0 0; line-height: 1.5; max-width: 64ch; }
+
+  /* Your vocabulary against the show */
+  .you { margin: 44px 0 0; border: 1px solid var(--edge); padding: 22px 22px 18px; background: var(--card); }
+  .you h2 { margin: 0 0 6px; font-size: clamp(24px, 3vw, 30px); max-width: none; }
+  .you-read { font-family: var(--display); font-size: clamp(21px, 2.6vw, 27px); line-height: 1.35; color: var(--ink); margin: 10px 0 0; max-width: 40ch; }
+  .you-read b { font-weight: 600; color: var(--accent2); font-variant-numeric: tabular-nums; }
+  .you-read i { color: var(--accent); }
+  .you label { display: block; font-family: var(--sans); font-size: 14px; color: var(--ink2); margin: 16px 0 4px; }
+  .you input[type=range] { width: 100%; accent-color: var(--accent); }
+  .you svg { display: block; width: 100%; height: auto; margin-top: 10px; touch-action: pan-y; cursor: crosshair; }
+  .ch text { font-family: var(--mono); font-size: 11px; fill: var(--ink2); }
+  .ch .lbl { font-family: var(--display); font-style: italic; font-size: 13.5px; }
+  .ch .ax { stroke: var(--rule); stroke-width: 1; }
+  .ch .ln { fill: none; stroke: var(--accent2); stroke-width: 2; }
+  .ch .bench { stroke: var(--ink2); stroke-width: 1; stroke-dasharray: 4 4; }
+  .ch .cur { stroke: var(--accent); stroke-width: 1.2; }
+  .ch .dot { fill: var(--accent); }
+  .ch .bar { fill: var(--accent2); }
+  .ch .bar.on { fill: var(--accent); }
+  .ch .mean { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 5 4; }
+
+  /* Ranked lists drawn as bars */
+  .hbars { margin: 22px 0 0; border-top: 1px solid var(--rule); }
+  .hb { display: grid; grid-template-columns: 9.5rem minmax(0,1fr) 4.2rem; gap: 0 12px; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--rule); font-family: var(--sans); font-size: 15px; }
+  .hb .k { color: var(--ink); }
+  .hb .k i { font-family: var(--display); font-size: 17px; }
+  .hb .t { height: 12px; background: var(--rule); position: relative; }
+  .hb .t span { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent2); }
+  .hb.hi .t span { background: var(--accent); }
+  .hb .v { font-family: var(--mono); font-size: 13.5px; color: var(--ink2); text-align: right; }
+  .words { columns: 3 10rem; column-gap: 28px; margin: 22px 0 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); padding-top: 10px; }
+  .words li { break-inside: avoid; display: grid; grid-template-columns: 1.8rem minmax(0,1fr) auto; gap: 0 8px; align-items: baseline; padding: 3px 0; border-bottom: 1px solid var(--rule); }
+  .words .n { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .words .w { font-family: var(--display); font-size: 19px; color: var(--ink); }
+  .words .p { font-family: var(--mono); font-size: 12.5px; color: var(--ink2); }
+  .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--edge); margin-top: 18px; }
+  .seg button { font: 600 13px/1 var(--sans); padding: 9px 12px; background: var(--card); color: var(--ink); border: 0; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--edge); }
+  .seg button[aria-pressed=true] { background: var(--accent); color: var(--paper); }
+  .ep-read { font-family: var(--mono); font-size: 14px; color: var(--ink); margin: 10px 0 0; min-height: 1.5em; }
+  #ep svg { display: block; width: 100%; height: auto; margin-top: 6px; }
+  @media (max-width: 520px) { .hb { grid-template-columns: 6.5rem minmax(0,1fr) 3.6rem; font-size: 14px; } .you { padding: 16px 14px 14px; } }
 </style>
 </head>
 <body>
@@ -265,11 +307,10 @@
     <h1>About 1,250 word families cover 95% of what anyone says on the show.</h1>
 
     <p class="hero-sub">
-      I scraped the subtitle transcripts for all 38 episodes, 224,815 words in
-      total, and measured how much English a viewer needs to follow them. The 100
-      most common words make up 61% of the speech. Published estimates for everyday
-      English put 95% coverage at about 3,000 word families, so this show needs well
-      under half that.
+      I scraped the subtitle transcripts for all 38 episodes, 224,815 words, and
+      measured how much English a viewer needs to follow them. Published estimates
+      put 95% coverage of everyday spoken English at about 3,000 word families. This
+      show needs well under half that.
     </p>
 
     <div class="cta-row">
@@ -293,18 +334,32 @@
         with the lemmatizer from <code>scripts/analyze_vocab_level.py</code>.</p>
     </div>
 
+    <div class="you" id="you">
+      <h2>How much of the show would you follow?</h2>
+      <p class="you-read" id="you-read" aria-live="polite">Know the <b>1,249</b> most common word families and you follow <b>95.0%</b> of the speech. About <i>one word in 20</i> would be new to you.</p>
+      <label for="you-n">Word families you know, most common first</label>
+      <input type="range" id="you-n" min="0" max="1" step="1" value="0" />
+      <svg id="you-svg" class="ch" viewBox="0 0 640 250" role="img" tabindex="0"
+        aria-label="Coverage curve for the season: the share of all speech covered as more word families are known, on a log scale. It passes 80 percent at 250 families, 95 percent at 1,249 and 98 percent at 2,554. The dashed line marks 3,000 families, the published figure for 95 percent of everyday spoken English. Arrow keys move along the curve."></svg>
+      <p class="fig-cap">Every point is the season's own coverage curve: the 224,815 tokens lemmatized and ranked
+        with the method in <code>scripts/analyze_vocab_level.py</code>, which reproduces the
+        250, 592, 1,249 and 2,554 in <code>V4/tables/vocabulary_coverage.csv</code> exactly.
+        Word families are approximated by WordNet lemmas.</p>
+      <noscript><img width="4288" height="2311" src="../V4/figures/11_vocabulary_coverage.png" alt="Coverage curve: share of all speech understood as more word families are known, passing 95 percent at about 1,250 families and 98 percent at about 2,550." /></noscript>
+    </div>
+
     <div class="claims">
       <div class="claim">
         <div class="n">61%</div>
         <p>of all speech is the 100 most common words. The top 10 alone are 22.7%.</p>
       </div>
       <div class="claim">
-        <div class="n">1,249</div>
-        <p>word families reach 95% coverage, and 2,554 reach 98%.</p>
+        <div class="n">2,554</div>
+        <p>word families reach 98% coverage, still below the 3,000 that everyday English needs for 95%.</p>
       </div>
       <div class="claim">
         <div class="n">2.8</div>
-        <p>Flesch-Kincaid grade level, with a Flesch Reading Ease of 90.2. 97.9% of
+        <p>Flesch-Kincaid grade, with a Flesch Reading Ease of 90.2. 97.9% of
            words are on the Dale-Chall list of 3,000 familiar words.</p>
       </div>
       <div class="claim">
@@ -320,161 +375,120 @@
 
   <section class="stop">
     <p class="eyebrow">The question</p>
-    <h2>How much English do you need to follow it?</h2>
+    <h2>How many words before you can follow it?</h2>
     <p>
-      Making fun of reality TV dialogue is easy and tells you nothing. I wanted the
-      language learner's question answered instead: how many words do I need before
-      I can follow this? Intermediate learners are routinely told to watch
-      native-speaker television, and most of it is too hard for them.
+      Intermediate learners are routinely told to watch native-speaker television,
+      and most of it is too hard for them. A corpus turns "is this show hard?" into a
+      number: rank every word family by frequency, add up their share of the speech,
+      and read off how many families it takes to reach 95% coverage.
     </p>
     <p>
-      A corpus turns that into a number. Rank every word family by frequency, add up
-      their share of the speech, and read off how many families it takes to reach
-      95% coverage.
+      The comparison figures come from the published literature: about 3,000 word
+      families for 95% of everyday spoken English (Adolphs and Schmitt 2003; Nation
+      2006), and about the same for TV dialogue in general (Webb and Rodgers 2009). This
+      show reaches 95% at 1,249 families, 90% at 592 and 98% at 2,554.
     </p>
   </section>
 
   <section class="stop stop--key">
-    <p class="eyebrow">Vocabulary load</p>
-    <h2>1,250 families get you to 95%</h2>
-
-    <div class="bignum">1,249</div>
-    <p class="bignum-note">word families for 95% coverage; 592 for 90%, 2,554 for 98%.</p>
-
-    <p>
-      The benchmark I compare against is from the published literature: about
-      3,000 word families for 95% coverage of everyday spoken English (Adolphs and
-      Schmitt 2003; Nation 2006), and about the same for TV dialogue in general
-      (Webb and Rodgers 2009). Even 98% of this show sits below that 3,000 mark.
-    </p>
-    <figure>
-      <div class="plate">
-        <img width="4288" height="2311" src="../V4/figures/11_vocabulary_coverage.png" fetchpriority="high"
-          alt="Coverage curve: share of all speech understood as more word families are known, passing 95 percent at about 1,250 families and 98 percent at about 2,550." />
-      </div>
-      <figcaption>Vocabulary coverage curve, word families on the x-axis. Produced by <code>scripts/analyze_vocab_level.py</code>.</figcaption>
-    </figure>
-  </section>
-
-  <section class="stop">
     <p class="eyebrow">Reading level</p>
-    <h2>Grade 2.8 by Flesch-Kincaid, higher by other formulas</h2>
+    <h2>Grade 2.8 by Flesch-Kincaid, about grade 7 by the stricter formulas</h2>
     <p>
-      Flesch-Kincaid puts the whole corpus at grade 2.8, and every episode falls
-      between 2.3 and 3.7. textstat's consensus estimate is grade 3.0. The formulas
-      that weight syllables or unfamiliar words read higher: SMOG gives 6.9 and the
-      approximate Dale-Chall grade is 7.3. Only 2.1% of the words spoken fall
-      outside the Dale-Chall list of 3,000 familiar words.
+      The formulas disagree by four grades. Flesch-Kincaid, which leans on sentence
+      length, scores the short spoken sentences as very easy, and every episode falls
+      between 2.3 and 3.7. SMOG and Dale-Chall weight long and unfamiliar words more,
+      and read higher. Only 2.1% of the words spoken fall outside the Dale-Chall list
+      of 3,000 familiar words.
     </p>
-    <figure>
-      <div class="plate">
-        <img width="4312" height="1991" src="../V4/figures/12_reading_level.png" loading="lazy"
-          alt="Flesch-Kincaid grade of the show, about 2.8, plotted against common reading-level benchmarks." />
-      </div>
-      <figcaption>Flesch-Kincaid grade against common benchmarks.</figcaption>
-    </figure>
+    <div class="hbars" role="table" aria-label="Reading grade by formula">
+      <div class="hb hi" role="row"><span class="k" role="cell">Flesch-Kincaid</span><span class="t" role="cell"><span style="width:35.1%"></span></span><span class="v" role="cell">2.81</span></div>
+      <div class="hb" role="row"><span class="k" role="cell">textstat consensus</span><span class="t" role="cell"><span style="width:37.5%"></span></span><span class="v" role="cell">3.0</span></div>
+      <div class="hb" role="row"><span class="k" role="cell">SMOG</span><span class="t" role="cell"><span style="width:86.4%"></span></span><span class="v" role="cell">6.91</span></div>
+      <div class="hb" role="row"><span class="k" role="cell">Dale-Chall (approx.)</span><span class="t" role="cell"><span style="width:91%"></span></span><span class="v" role="cell">7.28</span></div>
+    </div>
+    <p class="fig-cap">US school grade by formula, bars on a 0 to 8 scale. From <code>V4/tables/reading_level.csv</code> (textstat).</p>
   </section>
 
   <section class="stop">
     <p class="eyebrow">The distribution</p>
-    <h2>Textbook Zipf, with a heavy head</h2>
+    <h2>Thirty words are 40% of everything said</h2>
     <p>
-      Word frequency follows Zipf's law closely (regressing log frequency on log
-      rank gives R² = <strong>0.981</strong> and a slope of −1.45), as most natural
-      language does. The surprise is how much the head carries. The top 10
-      words are 22.7% of all speech, the top 100 are <strong>61.0%</strong>, and the
-      top 1,000 are 91.1%. "You", "to" and "like" are the three most common words,
-      and "like" alone is 2.8% of everything said.
+      Word frequency follows Zipf's law closely: regressing log frequency on log rank
+      gives R² = <strong>0.981</strong> and a slope of −1.45, as in most natural
+      language. What stands out is how much the head carries. The top 10 words are
+      22.7% of all speech, the top 30 are 39.8%, the top 100 are <strong>61.0%</strong>
+      and the top 1,000 are 91.1%. "Like" alone is 2.8%.
     </p>
-    <div class="panels">
-      <figure>
-        <div class="plate">
-          <img width="4712" height="3524" src="../V4/figures/02_word_frequency_distribution.png" loading="lazy"
-            alt="Log-log plot of word rank against frequency forming a near-straight line, the signature of a Zipf distribution." />
-        </div>
-        <figcaption>Rank against frequency on log-log axes.</figcaption>
-      </figure>
-      <figure>
-        <div class="plate">
-          <img width="4712" height="3912" src="../V4/figures/01_top50_words.png" loading="lazy"
-            alt="Bar chart of the fifty most frequent words, led by you, to, like and the." />
-        </div>
-        <figcaption>The 50 most frequent words.</figcaption>
-      </figure>
-    </div>
+    <ol class="words" id="words" aria-label="The 30 most frequent words with their share of all tokens"></ol>
+    <p class="fig-cap">Rank, word and share of all 224,815 tokens, from <code>V4/tables/top100_words.csv</code>. Raw word forms, not families.</p>
     <figure>
-      <div class="plate">
-        <img width="5841" height="3112" src="../V4/figures/05_wordcloud_no_stopwords.png" loading="lazy"
-          alt="Word cloud of the most frequent content words once stopwords are removed." />
-      </div>
-      <figcaption>Most frequent content words, stopwords removed.</figcaption>
+      <svg id="zipf" class="ch" viewBox="0 0 640 260" role="img" tabindex="0" style="display:block;width:100%;height:auto;touch-action:pan-y"
+        aria-label="Rank against frequency for all 7,856 word types on log-log axes. The points fall close to a straight line with slope minus 1.45 and R squared 0.98. Arrow keys step along the ranks."></svg>
+      <p class="ep-read" id="zipf-read" aria-live="polite"></p>
+      <figcaption>Every word type in the season, rank against count, both on log scales; the dashed line is the least-squares fit (slope −1.453, R² = 0.981, matching <code>V4/tables/statistical_tests.csv</code>). Counts recomputed from the corpus with the tokenizer in <code>scripts/</code>; the top 100 match <code>top100_words.csv</code> exactly.</figcaption>
+      <noscript><img width="4712" height="3524" src="../V4/figures/02_word_frequency_distribution.png" alt="Log-log plot of word rank against frequency forming a near-straight line, the signature of a Zipf distribution." /></noscript>
     </figure>
   </section>
 
   <section class="stop">
-    <p class="eyebrow">Texture</p>
-    <h2>Flat across the season, positive, heavy on filler</h2>
+    <p class="eyebrow">Across the season</p>
+    <h2>No episode-to-episode trend in variety or tone</h2>
     <p>
-      Lexical diversity averages an <strong>MTLD of 59.96</strong> per episode and
-      has no trend across the season (Spearman ρ = −0.03, p = 0.87). Sentiment
-      polarity from TextBlob stays positive in every episode, also with no trend.
-      Adjectives are only <strong>8.4%</strong> of words, against 24.5% verbs and
-      13.6% pronouns.
+      Lexical diversity averages an <strong>MTLD of 59.96</strong> per episode with no
+      trend across the season (Spearman ρ = −0.03, p = 0.87). Sentiment polarity from
+      TextBlob is positive in every episode, also with no trend (ρ = −0.15, p = 0.37).
+      Episode 38, the last, is the longest at 11,366 words.
     </p>
-    <p>
-      The filler words are frequent enough to chart on their own: "like" appears 28
-      times per 1,000 words, "know" 13, "yeah" 12 and "just" 12. This is unscripted speech, and unscripted speakers lean on a small stock of
-words.
-    </p>
-    <div class="panels">
-      <figure>
-        <div class="plate">
-          <img width="5469" height="3916" src="../V4/figures/03_lexical_diversity_per_episode.png" loading="lazy"
-            alt="Lexical diversity per episode across the season, a flat line with no upward or downward trend." />
-        </div>
-        <figcaption>Diversity per episode: no trend.</figcaption>
-      </figure>
-      <figure>
-        <div class="plate">
-          <img width="4712" height="2312" src="../V4/figures/06_filler_words.png" loading="lazy"
-            alt="Filler words per 1,000 words, led by like at about 28, then know, yeah and just at about 12 each." />
-        </div>
-        <figcaption>Filler words per 1,000 words.</figcaption>
-      </figure>
-      <figure>
-        <div class="plate">
-          <img width="5512" height="3111" src="../V4/figures/08_sentiment_per_episode.png" loading="lazy"
-            alt="Sentiment polarity and subjectivity per episode, positive and highly subjective throughout the season." />
-        </div>
-        <figcaption>Sentiment polarity and subjectivity per episode.</figcaption>
-      </figure>
-      <figure>
-        <div class="plate">
-          <img width="3912" height="2312" src="../V4/figures/07_pos_distribution.png" loading="lazy"
-            alt="Part-of-speech shares: verbs 24.5 percent, nouns 17.9, prepositions 15.4, pronouns 13.6, adjectives 8.4." />
-        </div>
-        <figcaption>Part-of-speech shares (NLTK tagger).</figcaption>
-      </figure>
+    <div id="ep">
+      <span class="seg" role="group" aria-label="Measure">
+        <button type="button" data-m="2" aria-pressed="true">MTLD</button>
+        <button type="button" data-m="4" aria-pressed="false">Polarity</button>
+        <button type="button" data-m="1" aria-pressed="false">Words</button>
+      </span>
+      <p class="ep-read" id="ep-read" aria-live="polite"></p>
+      <svg id="ep-svg" class="ch" viewBox="0 0 640 200" role="img" tabindex="0" aria-label="One bar per episode, 1 to 38. Arrow keys step through episodes."></svg>
+      <p class="fig-cap">Per-episode values from <code>V4/tables/lexical_diversity.csv</code> and <code>sentiment_scores.csv</code>; the dashed line is the season mean. Hover or use the arrow keys for a single episode.</p>
     </div>
+  </section>
+
+  <section class="stop">
+    <p class="eyebrow">Texture</p>
+    <h2>Verbs and filler, few adjectives</h2>
+    <p>
+      Adjectives are only <strong>8.4%</strong> of words, against 24.5% verbs and 13.6%
+      pronouns. The filler words are frequent enough to chart on their own: "like"
+      appears 28 times per 1,000 words, "know" 13, "yeah" 12 and "just" 12. This is
+      unscripted speech, and unscripted speakers lean on a small stock of words.
+    </p>
+    <div class="hbars" role="table" aria-label="Filler words per 1,000 words">
+      <div class="hb hi" role="row"><span class="k" role="cell"><i>like</i></span><span class="t" role="cell"><span style="width:100%"></span></span><span class="v" role="cell">28.2</span></div>
+      <div class="hb" role="row"><span class="k" role="cell"><i>know</i></span><span class="t" role="cell"><span style="width:46.1%"></span></span><span class="v" role="cell">13.0</span></div>
+      <div class="hb" role="row"><span class="k" role="cell"><i>yeah</i></span><span class="t" role="cell"><span style="width:44.2%"></span></span><span class="v" role="cell">12.5</span></div>
+      <div class="hb" role="row"><span class="k" role="cell"><i>just</i></span><span class="t" role="cell"><span style="width:41.1%"></span></span><span class="v" role="cell">11.6</span></div>
+      <div class="hb" role="row"><span class="k" role="cell"><i>really</i></span><span class="t" role="cell"><span style="width:23%"></span></span><span class="v" role="cell">6.5</span></div>
+      <div class="hb" role="row"><span class="k" role="cell"><i>right</i></span><span class="t" role="cell"><span style="width:12.9%"></span></span><span class="v" role="cell">3.6</span></div>
+      <div class="hb" role="row"><span class="k" role="cell"><i>okay</i></span><span class="t" role="cell"><span style="width:11.3%"></span></span><span class="v" role="cell">3.2</span></div>
+      <div class="hb" role="row"><span class="k" role="cell"><i>definitely</i></span><span class="t" role="cell"><span style="width:9%"></span></span><span class="v" role="cell">2.5</span></div>
+    </div>
+    <p class="fig-cap">Uses per 1,000 words, the top 8 of 24 tracked fillers, from <code>V4/tables/filler_word_counts.csv</code>. Every use is counted, including "like" as a verb, so these overstate filler use.</p>
   </section>
 
   <section class="stop stop--warn">
     <p class="eyebrow">Limitations</p>
     <h2>One season, read from subtitles</h2>
     <p>
-      This is one season of one show, and generalizing to reality TV as a genre
-      would take more seasons to compare against.
+      This is one season of one show, and generalizing to reality TV as a genre would
+      take more seasons to compare against.
     </p>
     <p>
-      Subtitles drop things that make speech hard to follow: overlapping talk,
-      accents, and speed of delivery. A show can be lexically easy and still hard to parse at full speed, so the
-coverage number is a lower bound on difficulty.
+      Subtitles drop what makes speech hard to follow: overlapping talk, accents and
+      speed of delivery. A show can be lexically easy and still hard to parse at full
+      speed, so the coverage number is a lower bound on difficulty.
     </p>
     <p>
-      Word families are approximated by WordNet lemmatization, which merges
-      inflections ("making" to "make") but not derived forms. Readability formulas
-      were built for written prose and disagree on this dialogue, from grade 3 to
-      about 7.
+      Word families are approximated by WordNet lemmatization, which merges inflections
+      ("making" to "make") but not derived forms. Readability formulas were built for
+      written prose and disagree on this dialogue, from grade 3 to about 7.
     </p>
   </section>
 
@@ -482,9 +496,9 @@ coverage number is a lower bound on difficulty.
     <p class="eyebrow">Method</p>
     <h2>Where the numbers come from</h2>
     <p>
-      The repository ships the cleaned corpus, one <code>.txt</code> per episode
-      plus a combined CSV, so every number can be checked. The paper is written in
-      Markdown, converted to LaTeX by a script in the repo, and compiled to PDF.
+      The repository ships the cleaned corpus, one <code>.txt</code> per episode plus a
+      combined CSV, so every number can be checked. The paper is written in Markdown,
+      converted to LaTeX by a script in the repo, and compiled to PDF.
     </p>
     <dl class="specs">
       <div class="spec"><dt>Corpus</dt><dd>Subtitle transcripts of all 38 episodes of <em>Love Island USA</em> season 4 (2022), scraped with Selenium; 224,815 tokens, 7,856 word types</dd></div>
@@ -492,7 +506,7 @@ coverage number is a lower bound on difficulty.
       <div class="spec"><dt>Diversity</dt><dd>TTR, root TTR and MTLD per episode; MTLD because it holds steady across episode lengths</dd></div>
       <div class="spec"><dt>Readability</dt><dd>textstat: Flesch-Kincaid, Flesch Reading Ease, SMOG, Dale-Chall</dd></div>
       <div class="spec"><dt>Other</dt><dd>NLTK part-of-speech tags, TextBlob sentiment, Pearson and Spearman tests for trends across the season</dd></div>
-      <div class="spec"><dt>Built with</dt><dd>Python, pandas, NLTK, TextBlob, textstat, SciPy, matplotlib, seaborn, wordcloud</dd></div>
+      <div class="spec"><dt>Built with</dt><dd>Python, pandas, NLTK, TextBlob, textstat, SciPy, matplotlib, seaborn; the charts on this page are hand-written SVG and HTML drawn from the CSVs in <code>V4/tables/</code></dd></div>
       <div class="spec"><dt>Related</dt><dd>The same measures on pop lyrics in <a href="https://lyhjeremy.github.io/lyrics-complexity-over-time/">Are song lyrics getting simpler?</a>, and as a browser tool for any book in the <a href="https://lyhjeremy.github.io/epub-reading-level-analyzer/">EPUB reading-level analyzer</a></dd></div>
     </dl>
   </section>
@@ -502,7 +516,6 @@ coverage number is a lower bound on difficulty.
 
 <div class="wrap">
   <section class="close">
-    <h2>1,250 word families, and you can follow the season</h2>
     <div class="cta-row">
       <a class="btn btn-primary" href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Read the paper (PDF)</a>
       <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">Code and corpus on GitHub</a>
@@ -519,5 +532,156 @@ coverage number is a lower bound on difficulty.
     </p>
   </footer>
 </div>
+
+<script>
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  function mk(tag, a, p) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; }
+  function fmt(n) { return n.toLocaleString("en-US"); }
+  function clear(el) { while (el.firstChild) el.removeChild(el.firstChild); }
+  // Draw in real pixels: the viewBox width follows the element's width, so labels stay legible on a phone.
+  function sizeOf(svg, h, hNarrow) {
+    var w = Math.round(Math.max(300, Math.min(760, svg.getBoundingClientRect().width || 640)));
+    var hh = w < 520 ? hNarrow : h;
+    svg.setAttribute("viewBox", "0 0 " + w + " " + hh);
+    return [w, hh];
+  }
+  function stepKeys(e) { return { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -10, PageUp: 10 }[e.key]; }
+  function nearestLog(arr, v) { var best = 0; arr.forEach(function (p, i) { if (Math.abs(Math.log(p[0] / v)) < Math.abs(Math.log(arr[best][0] / v))) best = i; }); return best; }
+
+  /* Coverage curve: [families known, percent of tokens covered] */
+  var P = [[1,4.1],[2,8.12],[3,11.03],[4,13.89],[5,16.54],[6,18.9],[7,20.99],[8,23.03],[9,24.85],[10,26.25],[11,27.49],[12,28.65],[13,29.75],[14,30.82],[15,31.84],[16,32.84],[17,33.81],[18,34.74],[19,35.66],[20,36.56],[21,37.44],[22,38.31],[23,39.15],[24,39.98],[25,40.7],[26,41.4],[27,42.07],[28,42.73],[29,43.38],[30,44.0],[31,44.62],[32,45.18],[33,45.72],[34,46.25],[35,46.78],[36,47.29],[37,47.79],[38,48.28],[39,48.76],[40,49.21],[41,49.63],[42,50.04],[43,50.46],[44,50.86],[45,51.26],[46,51.65],[47,52.02],[48,52.38],[49,52.75],[50,53.11],[51,53.47],[52,53.83],[53,54.19],[54,54.55],[55,54.89],[56,55.24],[57,55.58],[58,55.92],[59,56.25],[60,56.58],[61,56.9],[62,57.21],[63,57.52],[64,57.82],[65,58.13],[66,58.43],[67,58.71],[68,58.98],[69,59.24],[70,59.5],[71,59.75],[72,60.0],[73,60.24],[74,60.49],[75,60.72],[76,60.95],[77,61.18],[78,61.4],[79,61.62],[80,61.84],[81,62.06],[82,62.27],[83,62.48],[84,62.69],[85,62.9],[86,63.1],[87,63.29],[88,63.49],[89,63.68],[90,63.87],[91,64.06],[92,64.25],[93,64.44],[94,64.62],[95,64.8],[96,64.98],[97,65.16],[98,65.34],[99,65.51],[100,65.68],[103,66.19],[105,66.53],[108,67.02],[111,67.49],[114,67.94],[117,68.38],[120,68.8],[123,69.21],[126,69.62],[129,70.01],[133,70.53],[136,70.9],[140,71.38],[143,71.73],[147,72.19],[151,72.64],[155,73.05],[159,73.45],[163,73.82],[167,74.19],[172,74.63],[176,74.97],[181,75.38],[185,75.7],[190,76.08],[195,76.46],[200,76.83],[205,77.18],[211,77.6],[216,77.94],[222,78.33],[228,78.71],[233,79.02],[240,79.43],[246,79.78],[250,80.0],[252,80.12],[259,80.5],[265,80.82],[272,81.17],[279,81.51],[287,81.88],[294,82.19],[302,82.54],[310,82.88],[318,83.21],[326,83.53],[334,83.84],[343,84.17],[352,84.5],[361,84.81],[371,85.15],[380,85.44],[390,85.75],[400,86.05],[411,86.36],[421,86.63],[432,86.92],[444,87.22],[455,87.48],[467,87.76],[479,88.02],[492,88.3],[500,88.46],[505,88.55],[518,88.8],[531,89.03],[545,89.27],[559,89.5],[574,89.74],[589,89.96],[592,90.01],[604,90.18],[620,90.4],[636,90.61],[652,90.81],[669,91.01],[687,91.22],[705,91.41],[723,91.6],[742,91.78],[761,91.96],[781,92.15],[801,92.33],[822,92.51],[843,92.68],[865,92.85],[888,93.02],[911,93.18],[935,93.34],[959,93.5],[984,93.66],[1000,93.75],[1010,93.81],[1036,93.96],[1063,94.11],[1090,94.26],[1119,94.4],[1148,94.54],[1178,94.69],[1208,94.82],[1240,94.96],[1249,95.0],[1272,95.1],[1305,95.23],[1339,95.36],[1374,95.49],[1410,95.62],[1446,95.75],[1484,95.87],[1523,95.99],[1562,96.11],[1603,96.23],[1645,96.34],[1688,96.45],[1731,96.57],[1776,96.67],[1823,96.78],[1870,96.88],[1919,96.99],[1969,97.1],[2000,97.15],[2020,97.19],[2073,97.28],[2126,97.38],[2182,97.48],[2239,97.58],[2297,97.66],[2357,97.74],[2418,97.82],[2481,97.9],[2545,97.99],[2554,98.0],[2612,98.08],[2680,98.17],[2749,98.24],[2821,98.3],[2894,98.37],[2970,98.43],[3000,98.46],[3047,98.5],[3126,98.57],[3208,98.65],[3291,98.72],[3377,98.8],[3464,98.87],[3555,98.94],[3647,98.98],[3742,99.02],[3839,99.06],[3939,99.11],[4042,99.15],[4147,99.2],[4255,99.25],[4366,99.3],[4479,99.35],[4596,99.4],[4715,99.45],[4838,99.51],[4964,99.56],[5093,99.62],[5226,99.68],[5362,99.74],[5501,99.8],[5644,99.87],[5791,99.93],[5942,100.0]];
+  var svg = document.getElementById("you-svg"), inp = document.getElementById("you-n"), out = document.getElementById("you-read");
+  var MAX = P[P.length - 1][0], ci = 0, cur, dot, cx, cy, cdim;
+  inp.max = P.length - 1;
+  P.forEach(function (p, i) { if (p[0] === 1249) ci = i; });
+  function drawCov() {
+    clear(svg); cdim = sizeOf(svg, 250, 230);
+    var W = cdim[0], H = cdim[1], L = 40, R = 12, T = 12, B = 34;
+    cx = function (n) { return L + Math.log10(n) / Math.log10(MAX) * (W - L - R); };
+    cy = function (c) { return T + (1 - c / 100) * (H - T - B); };
+    [0, 50, 80, 95].forEach(function (c) {
+      mk("line", { x1: L, x2: W - R, y1: cy(c), y2: cy(c), "class": "ax" }, svg);
+      mk("text", { x: L - 6, y: cy(c) + 4, "text-anchor": "end" }, svg).textContent = c + "%";
+    });
+    [1, 10, 100, 1000].forEach(function (n) { mk("text", { x: cx(n), y: H - 16, "text-anchor": "middle" }, svg).textContent = fmt(n); });
+    mk("text", { x: (L + W - R) / 2, y: H - 2, "text-anchor": "middle", "class": "lbl" }, svg).textContent = "word families known (log scale)";
+    mk("line", { x1: cx(3000), x2: cx(3000), y1: T, y2: H - B, "class": "bench" }, svg);
+    mk("text", { x: cx(3000) - 6, y: cy(6), "text-anchor": "end", "class": "lbl" }, svg).textContent = W < 520 ? "3,000: everyday English" : "3,000 families: 95% of everyday English";
+    mk("path", { d: P.map(function (p, i) { return (i ? "L" : "M") + cx(p[0]).toFixed(1) + " " + cy(p[1]).toFixed(1); }).join(""), "class": "ln" }, svg);
+    cur = mk("line", { y1: T, y2: H - B, "class": "cur" }, svg);
+    dot = mk("circle", { r: 4.5, "class": "dot" }, svg);
+    setC(ci);
+  }
+  function setC(i) {
+    ci = Math.max(0, Math.min(P.length - 1, i)); inp.value = ci;
+    var n = P[ci][0], c = P[ci][1];
+    cur.setAttribute("x1", cx(n)); cur.setAttribute("x2", cx(n));
+    dot.setAttribute("cx", cx(n)); dot.setAttribute("cy", cy(c));
+    var miss = c >= 100 ? "every word would be familiar" : "about <i>one word in " + fmt(Math.round(100 / (100 - c))) + "</i> would be new to you";
+    out.innerHTML = "Know the <b>" + fmt(n) + "</b> most common word " + (n === 1 ? "family" : "families") + " and you follow <b>" + c.toFixed(1) + "%</b> of the speech; " + miss + ".";
+  }
+  inp.addEventListener("input", function () { setC(+inp.value); });
+  function cpick(e) {
+    var b = svg.getBoundingClientRect(), vx = (e.clientX - b.left) / b.width * cdim[0];
+    var W = cdim[0], L = 40, R = 12;
+    setC(nearestLog(P, Math.pow(10, (vx - L) / (W - L - R) * Math.log10(MAX))));
+  }
+  svg.addEventListener("pointermove", cpick); svg.addEventListener("pointerdown", cpick);
+  svg.addEventListener("keydown", function (e) { var s = stepKeys(e); if (s) { e.preventDefault(); setC(ci + s); } });
+
+  /* Zipf: [rank, count] for all word types, sampled on a log grid; fit from the same counts */
+  var Z = [[1,9228],[2,6545],[3,6338],[4,5972],[5,5289],[6,4684],[7,4592],[8,2920],[9,2802],[10,2702],[11,2604],[12,2595],[14,2299],[15,2244],[17,2100],[19,2061],[21,1978],[23,1570],[25,1510],[28,1456],[31,1369],[34,1174],[38,1079],[42,924],[46,842],[51,815],[56,803],[62,693],[69,570],[76,501],[84,434],[93,401],[103,379],[114,347],[126,313],[139,292],[154,254],[171,222],[189,194],[209,170],[231,146],[255,129],[282,114],[312,97],[345,85],[382,74],[423,62],[467,54],[517,45],[572,38],[632,33],[700,27],[774,23],[856,20],[946,17],[1047,15],[1158,13],[1281,11],[1416,10],[1567,8],[1733,7],[1916,6],[2120,5],[2344,4],[2593,4],[2868,3],[3172,3],[3508,2],[3880,2],[4291,2],[4746,1],[5250,1],[5806,1],[6422,1],[7103,1],[7856,1]], ZA = 5.5223, ZB = -1.4534;
+  var zs = document.getElementById("zipf"), zr = document.getElementById("zipf-read");
+  var RMAX = Z[Z.length - 1][0], zi = 0, zc, zx, zy, zdim;
+  Z.forEach(function (p, i) { if (p[0] <= 10) zi = i; });
+  function drawZ() {
+    clear(zs); zdim = sizeOf(zs, 260, 240);
+    var W = zdim[0], H = zdim[1], L = 52, R = 12, T = 12, B = 36;
+    zx = function (r) { return L + Math.log10(r) / Math.log10(RMAX) * (W - L - R); };
+    zy = function (c) { return T + (1 - Math.log10(c) / 4.1) * (H - T - B); };
+    [1, 10, 100, 1000, 10000].forEach(function (c) {
+      mk("line", { x1: L, x2: W - R, y1: zy(c), y2: zy(c), "class": "ax" }, zs);
+      mk("text", { x: L - 6, y: zy(c) + 4, "text-anchor": "end" }, zs).textContent = fmt(c);
+    });
+    [1, 10, 100, 1000].forEach(function (r) { mk("text", { x: zx(r), y: H - 18, "text-anchor": "middle" }, zs).textContent = fmt(r); });
+    mk("text", { x: (L + W - R) / 2, y: H - 3, "text-anchor": "middle", "class": "lbl" }, zs).textContent = "rank, log scale (count on the left)";
+    var r0 = Math.pow(10, (4.1 - ZA) / ZB);   // where the fitted line enters the plot
+    mk("line", { x1: zx(r0), x2: zx(RMAX), y1: zy(Math.pow(10, ZA + ZB * Math.log10(r0))), y2: zy(Math.pow(10, ZA + ZB * Math.log10(RMAX))), "class": "bench" }, zs);
+    mk("path", { d: Z.map(function (p, i) { return (i ? "L" : "M") + zx(p[0]).toFixed(1) + " " + zy(p[1]).toFixed(1); }).join(""), "class": "ln" }, zs);
+    zc = mk("circle", { r: 4.5, "class": "dot" }, zs);
+    setZ(zi);
+  }
+  function setZ(i) {
+    zi = Math.max(0, Math.min(Z.length - 1, i)); var p = Z[zi];
+    zc.setAttribute("cx", zx(p[0])); zc.setAttribute("cy", zy(p[1]));
+    var fit = Math.pow(10, ZA + ZB * Math.log10(p[0]));
+    zr.textContent = "Rank " + fmt(p[0]) + ": " + fmt(p[1]) + (p[1] === 1 ? " use" : " uses") + "; the fitted line predicts " + fmt(Math.round(fit));
+  }
+  function zpick(e) {
+    var b = zs.getBoundingClientRect(), vx = (e.clientX - b.left) / b.width * zdim[0];
+    var W = zdim[0], L = 52, R = 12;
+    setZ(nearestLog(Z, Math.pow(10, (vx - L) / (W - L - R) * Math.log10(RMAX))));
+  }
+  zs.addEventListener("pointermove", zpick); zs.addEventListener("pointerdown", zpick);
+  zs.addEventListener("keydown", function (e) { var s = stepKeys(e); if (s) { e.preventDefault(); setZ(zi + s); } });
+
+  /* Top 30 words, V4/tables/top100_words.csv */
+  var TOP = [["you",4.10],["to",2.91],["like",2.82],["the",2.66],["and",2.35],["it",2.08],["that",2.04],["know",1.30],["yeah",1.25],["do",1.20],["just",1.16],["is",1.15],["so",1.07],["in",1.02],["of",1.00],["me",0.97],["was",0.93],["for",0.93],["with",0.92],["we",0.91],["what",0.88],["my",0.87],["this",0.70],["have",0.69],["be",0.67],["on",0.67],["he",0.66],["really",0.65],["but",0.62],["oh",0.61]];
+  var ol = document.getElementById("words");
+  TOP.forEach(function (t, i) {
+    var li = document.createElement("li");
+    li.innerHTML = '<span class="n">' + (i + 1) + '</span><span class="w">' + t[0] + '</span><span class="p">' + t[1].toFixed(2) + '%</span>';
+    ol.appendChild(li);
+  });
+
+  /* Episodes: [episode, tokens, MTLD, TTR, polarity, subjectivity] */
+  var E = [[1,8650,59.21,0.1472,0.2651,0.5711],[2,7062,43.24,0.1569,0.2074,0.5553],[3,5930,61.9,0.1678,0.2216,0.5687],[4,5722,53.98,0.1636,0.1983,0.5633],[5,5415,81.93,0.2139,0.2169,0.5694],[6,5317,62.15,0.173,0.2218,0.5582],[7,5447,59.85,0.175,0.1531,0.575],[8,6468,56.49,0.1469,0.1701,0.5635],[9,5038,67.12,0.1898,0.1588,0.5693],[10,6087,55.08,0.1658,0.1934,0.554],[11,5961,62.39,0.2112,0.1168,0.5523],[12,5009,65.01,0.1992,0.1629,0.5431],[13,5411,54.69,0.1639,0.1386,0.5643],[14,4750,63.41,0.1933,0.1584,0.5813],[15,5368,51.89,0.1718,0.2229,0.5651],[16,5275,54.35,0.189,0.1826,0.5488],[17,5407,64.92,0.236,0.1458,0.5577],[18,5249,76.77,0.1734,0.0888,0.5511],[19,5176,71.49,0.1924,0.1888,0.5463],[20,5973,60.86,0.1801,0.1649,0.5527],[21,6031,59.93,0.1593,0.1845,0.552],[22,8294,55.45,0.1362,0.1491,0.5154],[23,5656,64.5,0.1609,0.1071,0.5238],[24,6174,60.16,0.1987,0.109,0.531],[25,5171,58.74,0.1831,0.1253,0.5404],[26,5617,64.88,0.1743,0.2314,0.5749],[27,6337,53.28,0.1629,0.1597,0.5589],[28,4675,67.98,0.1917,0.1288,0.5837],[29,4883,56.19,0.1862,0.1862,0.5375],[30,5244,55.98,0.2452,0.1034,0.5314],[31,5959,55.62,0.1628,0.1086,0.5437],[32,5167,61.26,0.1902,0.1657,0.5673],[33,4790,54.69,0.1921,0.1821,0.5437],[34,4763,61.5,0.1938,0.1584,0.546],[35,7932,43.82,0.1316,0.2495,0.5756],[36,6007,40.42,0.2064,0.1889,0.5549],[37,6034,67.58,0.177,0.278,0.5931],[38,11366,69.8,0.1245,0.2004,0.5504]];
+  var NAMES = { 1: ["words spoken", function (v) { return fmt(v); }], 2: ["MTLD", function (v) { return v.toFixed(1); }], 4: ["polarity", function (v) { return v.toFixed(3); }] };
+  var es = document.getElementById("ep-svg"), er = document.getElementById("ep-read");
+  var m = 2, sel = 37, bars = [], emean = 0;
+  function drawEp() {
+    clear(es); bars = [];
+    var d = sizeOf(es, 200, 190), EW = d[0], EH = d[1], EL = 46, ER = 8, ET = 12, EB = 26;
+    var mx = 0, sum = 0; E.forEach(function (r) { mx = Math.max(mx, r[m]); sum += r[m]; });
+    mx *= 1.08; emean = sum / E.length;
+    var bw = (EW - EL - ER) / E.length;
+    var yy = function (v) { return ET + (1 - v / mx) * (EH - ET - EB); };
+    [0, mx / 2.16, mx / 1.08].forEach(function (v) {
+      mk("line", { x1: EL, x2: EW - ER, y1: yy(v), y2: yy(v), "class": "ax" }, es);
+      mk("text", { x: EL - 6, y: yy(v) + 4, "text-anchor": "end" }, es).textContent = m === 4 ? v.toFixed(2) : fmt(Math.round(v));
+    });
+    E.forEach(function (r, i) {
+      var b = mk("rect", { x: EL + i * bw + 1, y: yy(r[m]), width: Math.max(1, bw - 2), height: yy(0) - yy(r[m]), "class": "bar" }, es);
+      b.addEventListener("pointerenter", function () { setEp(i); });
+      b.addEventListener("pointerdown", function () { setEp(i); });
+      bars.push(b);
+    });
+    [1, 10, 20, 30, 38].forEach(function (ep) { mk("text", { x: EL + (ep - 0.5) * bw, y: EH - 8, "text-anchor": "middle" }, es).textContent = ep; });
+    mk("line", { x1: EL, x2: EW - ER, y1: yy(emean), y2: yy(emean), "class": "mean" }, es);
+    setEp(sel);
+  }
+  function setEp(i) {
+    sel = Math.max(0, Math.min(E.length - 1, i));
+    bars.forEach(function (b, j) { b.setAttribute("class", j === sel ? "bar on" : "bar"); });
+    var r = E[sel], nm = NAMES[m];
+    er.textContent = "Episode " + r[0] + ": " + nm[0] + " " + nm[1](r[m]) + " (season mean " + nm[1](m === 1 ? Math.round(emean) : emean) + ")";
+  }
+  es.addEventListener("keydown", function (e) { var s = stepKeys(e); if (s) { e.preventDefault(); setEp(sel + s); } });
+  var segs = document.querySelectorAll("#ep .seg button");
+  Array.prototype.forEach.call(segs, function (btn) {
+    btn.addEventListener("click", function () {
+      m = +btn.dataset.m;
+      Array.prototype.forEach.call(segs, function (o) { o.setAttribute("aria-pressed", o === btn); });
+      drawEp();
+    });
+  });
+
+  function drawAll() { drawCov(); drawZ(); drawEp(); }
+  drawAll();
+  var lastW = window.innerWidth;
+  window.addEventListener("resize", function () { if (window.innerWidth !== lastW) { lastW = window.innerWidth; drawAll(); } });
+})();
+</script>
 </body>
 </html>
