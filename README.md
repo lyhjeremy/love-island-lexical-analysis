@@ -1,6 +1,7 @@
 # How simple is the language on *Love Island USA*?
 
-A corpus study of all 38 episodes of *Love Island USA* season 4: vocabulary load, word frequency, readability, lexical diversity, part of speech and sentiment, from 224,815 words of subtitle transcripts.
+How much English does a viewer need to follow *Love Island USA*? A corpus study of all 38 episodes of season 4 (224,815 words of subtitle transcripts) measures vocabulary load, word frequency, readability, lexical diversity, part of speech and sentiment.
+About 1,250 word families cover 95% of the speech, against about 3,000 for everyday spoken English, and Flesch-Kincaid puts the dialogue at grade 2.8.
 
 [Live site](https://lyhjeremy.github.io/love-island-lexical-analysis/) · [Write-up](https://lyhjeremy.github.io/love-island-lexical-analysis/overview/) · [Paper (PDF)](V4/LoveIsland_LexicalAnalysis_V4.pdf)
 

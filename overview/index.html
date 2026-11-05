@@ -297,6 +297,14 @@
   .ep-read { font-family: var(--mono); font-size: 14px; color: var(--ink); margin: 10px 0 0; min-height: 1.5em; }
   #ep svg { display: block; width: 100%; height: auto; margin-top: 6px; }
   @media (max-width: 520px) { .hb { grid-template-columns: 6.5rem minmax(0,1fr) 3.6rem; font-size: 14px; } .you { padding: 16px 14px 14px; } }
+
+  .entry { width: 100%; min-width: 0; margin: 32px 0 0; border-collapse: collapse; border-left: 3px solid var(--accent); font-family: var(--sans); font-size: 15px; line-height: 1.5; }
+  .entry caption { text-align: left; caption-side: top; font-family: var(--display); font-weight: 600; font-size: 21px; color: var(--ink); padding: 0 0 8px; }
+  .entry th, .entry td { text-align: left; vertical-align: top; padding: 7px 14px; border-bottom: 1px solid var(--rule); }
+  .entry th { width: 8.5rem; font-family: var(--mono); font-weight: 400; font-size: 12.5px; letter-spacing: .06em; color: var(--muted); text-transform: lowercase; padding-top: 9px; }
+  .entry td { color: var(--ink); }
+  .entry .hit td { font-weight: 600; color: var(--accent2); }
+  @media (max-width: 520px) { .entry, .entry tbody, .entry caption { display: block; } .entry caption { padding-left: 14px; } .entry th, .entry td { display: block; width: auto; border-bottom: 0; } .entry th { padding-bottom: 0; } .entry tr { display: block; border-bottom: 1px solid var(--rule); } }
 </style>
 </head>
 <body>
@@ -321,6 +329,18 @@
       <a class="btn btn-primary" href="../V4/LoveIsland_LexicalAnalysis_V4.pdf">Read the paper (PDF)</a>
       <a class="textlink" href="https://github.com/lyhjeremy/love-island-lexical-analysis">Code and corpus on GitHub</a>
     </div>
+
+    <table class="entry" aria-labelledby="entry-h">
+      <caption id="entry-h">At a glance</caption>
+      <tbody>
+        <tr><th scope="row">Question</th><td>How many English word families does a viewer need to follow <em>Love Island USA</em>?</td></tr>
+        <tr><th scope="row">Data</th><td>Subtitle transcripts of all 38 episodes of season 4 (2022): 224,815 tokens, 7,856 word types</td></tr>
+        <tr><th scope="row">Method</th><td>Tokens lemmatized with WordNet as a stand-in for word families, ranked by frequency, coverage read off the cumulative share; textstat readability, a Zipf fit and MTLD per episode</td></tr>
+        <tr><th scope="row">Benchmark</th><td>About 3,000 word families for 95% of everyday spoken English (Adolphs and Schmitt 2003; Nation 2006), and about the same for TV dialogue (Webb and Rodgers 2009)</td></tr>
+        <tr class="hit"><th scope="row">Result</th><td>1,249 families reach 95% coverage and 2,554 reach 98%. Flesch-Kincaid grade 2.81.</td></tr>
+        <tr><th scope="row">Main limit</th><td>One season of one show. Subtitles drop overlapping talk, accents and speed, so coverage understates how hard the show is to follow.</td></tr>
+      </tbody>
+    </table>
 
     <div class="gloss" aria-label="A line from episode 1 with the corpus frequency rank of each word">
       <div class="gloss-line">
